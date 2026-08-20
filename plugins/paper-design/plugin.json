@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "paper-design",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Design in Paper Desktop (paper.design) under its weekly MCP call quota: batched code-to-design seeds, design-system boards, screen mockups and state variants, plus an HTTP bridge for when the paper MCP tools aren't registered in the session.",
   "author": {
     "name": "Cesar Benavides",
