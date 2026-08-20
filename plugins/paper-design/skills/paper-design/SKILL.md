@@ -71,11 +71,14 @@ for how to execute without burning the quota.
    layout map in code (route → column, state → row) so a re-run lands in the same place.
    Rows are canonical states — Default · Loading · Empty · Gated/not-found · Error/filtered ·
    Dialog/overlay · Variants — so the same row means the same thing in every column. Add
-   **axis title frames**: a column-title artboard above every column (route name + board
-   count) and a row-title artboard at the left of every band (state name), with **very big
-   text (≈128px, weight 800, tight tracking)** so the grid reads at canvas zoom-out. Name
-   them `Axis · column · <Route>` / `Axis · row · <State>` and position them in the same
-   batched call as the boards.
+   **axis title frames**, with two deliberately different treatments so the axes never read
+   alike: X (column) titles are short wide banners above each column (1440×160, card fill,
+   route name at ≈96px/800 + a small "N boards" sub-line, 40px above the column); Y (row)
+   titles are narrow quiet labels left of each band (≈360 wide, transparent, state name at
+   ≈56px/700 in muted, a gold vertical rule on their right edge). Keep gutters tight (80px)
+   and band gaps modest (≈360px) — big titles must not blow up the grid. Name them
+   `Axis · column · <Route>` / `Axis · row · <State>` and position them in the same batched
+   call as the boards.
 10. **State the budget before starting** ("~40 calls: 3 screens × ~12 + 4 screenshots")
    and check Paper's usage meter before a long session.
 
