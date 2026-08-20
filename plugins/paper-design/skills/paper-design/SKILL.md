@@ -83,7 +83,15 @@ for how to execute without burning the quota.
    and band gaps modest (≈360px) — big titles must not blow up the grid. Name them
    `Axis · column · <Route>` / `Axis · row · <State>` and position them in the same batched
    call as the boards.
-10. **State the budget before starting** ("~40 calls: 3 screens × ~12 + 4 screenshots")
+10. **Light and dark are two whole parallel groups, not per-frame twins.** Paper tokens have
+    no modes and there are no component instances, so: seed a parallel light token set
+    (`--color-l-<name>` for every token whose value changes), keep ONE set of generators, and
+    render the light set by mapping `var(--color-X)` → `var(--color-l-X)` (plus light mesh /
+    shadows) on the way out. Build the light group as a complete mirror of the dark sections
+    (same geometry, names prefixed `Light · `) placed to the right of the entire dark canvas;
+    clone the title frames with `duplicate_nodes` and re-place them. A component fix = re-run
+    the generator in both modes.
+11. **State the budget before starting** ("~40 calls: 3 screens × ~12 + 4 screenshots")
    and check Paper's usage meter before a long session.
 
 ## Connecting
@@ -129,6 +137,15 @@ boards are buildable, not invented. Reuse a shared sidebar/header via
 `<x-paper-clone node-id="…">` to save calls.
 
 ## Gotchas (verified against paper-desktop 0.5.4)
+
+- `duplicate_nodes` takes `nodes: [{id}]` and returns source/new ids plus a `descendantIdMap`;
+  duplicates keep their names, so they can also be mapped by second occurrence in the tree.
+- `get_basic_info` lists at most ~100 artboards — for a full list use
+  `get_tree_summary(rootNodeId, depth=1)`.
+- SVG `<stop stop-color>` cannot take `var(--token)` (renders black) — use the literal hex of
+  the token there; fills/strokes on shapes can take `var()`.
+- `set_text_content` takes `updates: [{nodeId, textContent}]`.
+- A build interrupted mid-run may still have created boards — dedupe by name before laying out.
 
 - `create_artboard` accepts but ignores `left`/`top`; `update_styles` on the artboard is the only way to position it.
 - `layer-name` is the only naming hook in `write_html`; `id`/`title`/`aria-label` do nothing for the tree.
