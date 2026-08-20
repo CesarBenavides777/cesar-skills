@@ -1,0 +1,21 @@
+{
+  "name": "cesar-ai",
+  "displayName": "Cesar-AI",
+  "description": "Claude Code plugins by Cesar Benavides: design tooling and workflow skills.",
+  "owner": {
+    "name": "Cesar Benavides",
+    "url": "https://github.com/CesarBenavides777/claude-plugins"
+  },
+  "plugins": [
+    {
+      "name": "paper-design",
+      "displayName": "Paper Design (call-budgeted)",
+      "category": "design",
+      "source": "./plugins/paper-design",
+      "description": "Design in Paper Desktop (paper.design) under its weekly MCP call quota: batched code-to-design seeds, design-system boards, screen mockups and state variants, plus an HTTP bridge for when the paper MCP tools aren't registered in the session.",
+      "version": "0.1.0",
+      "strict": true,
+      "defaultEnabled": true
+    }
+  ]
+}

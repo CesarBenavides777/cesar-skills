@@ -1,0 +1,23 @@
+{
+  "name": "paper-design",
+  "displayName": "Paper Design (call-budgeted)",
+  "version": "0.1.0",
+  "description": "Design in Paper Desktop (paper.design) under its weekly MCP call quota: batched code-to-design seeds, design-system boards, screen mockups and state variants, plus an HTTP bridge for when the paper MCP tools aren't registered in the session.",
+  "author": {
+    "name": "Cesar Benavides",
+    "url": "https://github.com/CesarBenavides777/claude-plugins"
+  },
+  "repository": "https://github.com/CesarBenavides777/claude-plugins",
+  "license": "MIT",
+  "keywords": [
+    "paper",
+    "paper.design",
+    "design",
+    "design-system",
+    "mcp",
+    "code-to-design",
+    "design-to-code",
+    "tokens"
+  ],
+  "homepage": "https://github.com/CesarBenavides777/claude-plugins"
+}

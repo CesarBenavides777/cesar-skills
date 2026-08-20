@@ -1,0 +1,29 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "paper-design",
+  "version": "0.1.0",
+  "description": "Design in Paper Desktop (paper.design) under its weekly MCP call quota: batched code-to-design seeds, design-system boards, screen mockups and state variants, plus an HTTP bridge for when the paper MCP tools aren't registered in the session.",
+  "author": {
+    "name": "Cesar Benavides",
+    "url": "https://github.com/CesarBenavides777/claude-plugins"
+  },
+  "homepage": "https://github.com/CesarBenavides777/claude-plugins",
+  "repository": "https://github.com/CesarBenavides777/claude-plugins",
+  "license": "MIT",
+  "keywords": [
+    "paper",
+    "paper.design",
+    "design",
+    "design-system",
+    "mcp",
+    "code-to-design",
+    "design-to-code",
+    "tokens"
+  ],
+  "extensions": {
+    "com.anthropic.claude-code": {
+      "displayName": "Paper Design (call-budgeted)",
+      "defaultEnabled": true
+    }
+  }
+}
