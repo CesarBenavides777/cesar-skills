@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aria-slider",
+  "type": "registry:ui",
+  "title": "Aria Slider",
+  "description": "Aria Slider — React Aria Components primitive from @workspace/ui (aria family).",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "react-aria-components@^1.20.0"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/components/aria/slider.tsx",
+      "type": "registry:ui",
+      "target": "@components/aria/slider.tsx",
+      "content": "\"use client\";\n\nimport {\n  SliderFill,\n  Slider as SliderPrimitive,\n  SliderThumb,\n  SliderTrack,\n  type SliderProps as SliderPrimitiveProps,\n} from \"react-aria-components\";\n\nimport { cn } from \"@/lib/utils\";\n\ntype SliderValue = number | number[];\ntype SliderProps<T extends SliderValue = SliderValue> = Omit<\n  SliderPrimitiveProps<T>,\n  \"className\"\n> & {\n  className?: string;\n};\n\nfunction Slider<T extends SliderValue = SliderValue>({ className, ...props }: SliderProps<T>) {\n  return (\n    <SliderPrimitive\n      className={cn(\n        \"group relative flex w-full touch-none items-center select-none data-disabled:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-40 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col\",\n        className,\n      )}\n      data-slot=\"slider\"\n      {...props}\n    >\n      {({ state }) => {\n        return (\n          <>\n            <SliderTrack\n              data-slot=\"slider-track\"\n              className=\"relative grow overflow-hidden rounded-full bg-muted select-none data-[orientation=horizontal]:h-1.5 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1.5\"\n            >\n              <SliderFill\n                data-slot=\"slider-range\"\n                className=\"absolute bg-primary select-none data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full\"\n              />\n            </SliderTrack>\n            {state.values.map((_, index) => (\n              <SliderThumb\n                data-slot=\"slider-thumb\"\n                key={index}\n                index={index}\n                className=\"block size-4 shrink-0 rounded-full border border-primary bg-white shadow-sm ring-ring/50 transition-[color,box-shadow] select-none group-data-[orientation=horizontal]:top-[50%] group-data-[orientation=vertical]:left-[50%] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50\"\n              />\n            ))}\n          </>\n        );\n      }}\n    </SliderPrimitive>\n  );\n}\n\nexport { Slider };\n"
+    }
+  ],
+  "categories": [
+    "ui",
+    "aria"
+  ],
+  "meta": {
+    "family": "aria",
+    "source": "packages/ui/src/components/aria"
+  }
+}

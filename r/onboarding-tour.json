@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "onboarding-tour",
+  "type": "registry:component",
+  "title": "Onboarding Tour",
+  "description": "Wraps driver.js. Lazy-imported so it only loads when the tour actually runs.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "driver.js@^1.8.0"
+  ],
+  "files": [
+    {
+      "path": "packages/moneytrees-ui/src/components/onboarding-tour.tsx",
+      "type": "registry:component",
+      "target": "@components/moneytrees/onboarding-tour.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\ntype DriverInstance = {\n  setSteps: (steps: unknown[]) => void;\n  drive: (step?: number) => void;\n  destroy: () => void;\n  moveNext: () => void;\n  movePrevious: () => void;\n};\n\nexport type TourStep = {\n  element: string; // CSS selector\n  title: string;\n  description: string;\n  side?: \"top\" | \"right\" | \"bottom\" | \"left\";\n  align?: \"start\" | \"center\" | \"end\";\n};\n\ntype Props = {\n  open: boolean;\n  steps: TourStep[];\n  storageKey?: string;\n  onComplete?: () => void;\n  onSkip?: () => void;\n};\n\n/**\n * Wraps driver.js. Lazy-imported so it only loads when the tour actually runs.\n */\nexport function OnboardingTour({\n  open,\n  steps,\n  storageKey = \"moneytrees:tour:step\",\n  onComplete,\n  onSkip,\n}: Props) {\n  const driverRef = React.useRef<DriverInstance | null>(null);\n\n  React.useEffect(() => {\n    if (!open || typeof window === \"undefined\") return;\n    let cancelled = false;\n\n    (async () => {\n      const mod = await import(\"driver.js\");\n      // @ts-ignore -- CSS side-effect import: resolvable under moneytrees's\n      // vite types but not this package's own tsc context, so expect-error\n      // is \"unused\" in one and required in the other. ts-ignore fits both.\n      await import(\"driver.js/dist/driver.css\");\n      if (cancelled) return;\n      const driver = mod.driver;\n\n      const startStep = Number(localStorage.getItem(storageKey) ?? \"0\") || 0;\n\n      const handleComplete = () => {\n        localStorage.removeItem(storageKey);\n        driverRef.current?.destroy();\n        driverRef.current = null;\n        onComplete?.();\n      };\n\n      const handleSkip = () => {\n        localStorage.removeItem(storageKey);\n        driverRef.current?.destroy();\n        driverRef.current = null;\n        onSkip?.();\n      };\n\n      const instance = driver({\n        showProgress: true,\n        allowClose: true,\n        animate: true,\n        smoothScroll: true,\n        nextBtnText: \"Next →\",\n        prevBtnText: \"← Back\",\n        doneBtnText: \"Done\",\n        progressText: \"{{current}} / {{total}}\",\n        onCloseClick: handleSkip,\n        onDestroyStarted: () => {\n          // dismissed by background click / esc\n          if (driverRef.current) handleSkip();\n        },\n        steps: steps.map((s, i) => ({\n          element: s.element,\n          popover: {\n            title: s.title,\n            description: s.description,\n            side: s.side ?? \"right\",\n            align: s.align ?? \"start\",\n            onNextClick: () => {\n              const next = i + 1;\n              if (next >= steps.length) {\n                handleComplete();\n              } else {\n                localStorage.setItem(storageKey, String(next));\n                instance.moveNext();\n              }\n            },\n            onPrevClick: () => {\n              const prev = Math.max(0, i - 1);\n              localStorage.setItem(storageKey, String(prev));\n              instance.movePrevious();\n            },\n          },\n        })),\n      }) as DriverInstance;\n\n      driverRef.current = instance;\n      instance.drive(Math.min(startStep, steps.length - 1));\n    })();\n\n    return () => {\n      cancelled = true;\n      driverRef.current?.destroy();\n      driverRef.current = null;\n    };\n  }, [open, steps, storageKey, onComplete, onSkip]);\n\n  return null;\n}\n"
+    }
+  ],
+  "categories": [
+    "moneytrees"
+  ],
+  "meta": {
+    "family": "moneytrees",
+    "source": "packages/moneytrees-ui/src/components"
+  }
+}

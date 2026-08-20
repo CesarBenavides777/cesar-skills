@@ -1,0 +1,284 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "moneytrees-theme",
+  "type": "registry:theme",
+  "title": "moneytrees theme",
+  "description": "The moneytrees liquid-glass finance theme: bull/bear/gold palette, bubble radii, glass + spring tokens, type roles. Opt in with <html data-theme=\"moneytrees\" class=\"dark\">.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "cssVars": {
+    "theme": {
+      "radius-bubble-sm": "14px",
+      "radius-bubble-md": "22px",
+      "radius-bubble-lg": "32px",
+      "radius-bubble-pill": "9999px",
+      "text-2xs": "0.625rem",
+      "font-sans": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+      "font-mono": "ui-monospace, \"SF Mono\", SFMono-Regular, Menlo, Consolas, monospace",
+      "tracking-eyebrow": "0.2em",
+      "spacing-page": "1.5rem",
+      "spacing-section": "1rem",
+      "spacing-card": "1rem",
+      "spacing-card-lg": "1.5rem",
+      "spacing-empty": "2rem"
+    }
+  },
+  "css": {
+    "@utility mt-type-title": {
+      "font-size": "var(--text-2xl)",
+      "line-height": "var(--text-2xl--line-height)",
+      "font-weight": "700"
+    },
+    "@utility mt-type-section": {
+      "font-size": "var(--text-lg)",
+      "line-height": "var(--text-lg--line-height)",
+      "font-weight": "600"
+    },
+    "@utility mt-type-card-title": {
+      "font-size": "var(--text-base)",
+      "line-height": "var(--text-base--line-height)",
+      "font-weight": "600"
+    },
+    "@utility mt-type-eyebrow": {
+      "font-size": "var(--text-2xs)",
+      "text-transform": "uppercase",
+      "letter-spacing": "var(--tracking-eyebrow)"
+    },
+    "@utility mt-type-numeric": {
+      "font-family": "var(--font-mono)",
+      "font-variant-numeric": "tabular-nums"
+    },
+    "[data-theme=\"moneytrees\"]": {
+      "--background": "hsl(220 6% 94%)",
+      "--foreground": "hsl(220 14% 12%)",
+      "--card": "hsl(220 6% 99%)",
+      "--card-foreground": "hsl(220 14% 12%)",
+      "--popover": "hsl(220 6% 99%)",
+      "--popover-foreground": "hsl(220 14% 12%)",
+      "--secondary": "hsl(220 6% 90%)",
+      "--secondary-foreground": "hsl(220 14% 12%)",
+      "--muted": "hsl(220 6% 88%)",
+      "--muted-foreground": "hsl(220 9% 38%)",
+      "--accent": "hsl(220 6% 90%)",
+      "--accent-foreground": "hsl(220 14% 12%)",
+      "--border": "hsl(220 6% 84%)",
+      "--input": "hsl(220 6% 84%)",
+      "--sidebar": "hsl(220 6% 92%)",
+      "--sidebar-foreground": "hsl(220 14% 18%)",
+      "--sidebar-primary": "hsl(43 96% 50%)",
+      "--sidebar-primary-foreground": "hsl(220 14% 12%)",
+      "--sidebar-accent": "hsl(220 6% 86%)",
+      "--sidebar-accent-foreground": "hsl(220 14% 12%)",
+      "--sidebar-border": "hsl(220 6% 80%)",
+      "--sidebar-ring": "hsl(43 96% 50%)",
+      "--color-bull": "hsl(142 71% 45%)",
+      "--color-bull-soft": "hsl(142 71% 45% / 0.12)",
+      "--color-bull-fg": "hsl(142 76% 46%)",
+      "--color-bull-foreground": "hsl(0 0% 100%)",
+      "--color-bear": "hsl(0 84% 60%)",
+      "--color-bear-soft": "hsl(0 84% 60% / 0.12)",
+      "--color-bear-fg": "hsl(0 82% 65%)",
+      "--color-bear-foreground": "hsl(0 0% 100%)",
+      "--color-gold": "hsl(43 96% 56%)",
+      "--color-gold-soft": "hsl(43 96% 56% / 0.15)",
+      "--color-gold-fg": "hsl(43 96% 42%)",
+      "--color-gold-foreground": "hsl(220 14% 12%)",
+      "--color-violet": "hsl(263 70% 60%)",
+      "--color-violet-soft": "hsl(263 70% 60% / 0.15)",
+      "--color-violet-fg": "hsl(263 70% 60%)",
+      "--color-cyan": "hsl(189 94% 55%)",
+      "--color-cyan-soft": "hsl(189 94% 55% / 0.15)",
+      "--color-cyan-fg": "hsl(189 94% 40%)",
+      "--color-silver": "hsl(220 9% 64%)",
+      "--color-bronze": "hsl(28 60% 45%)",
+      "--gradient-bull-from": "hsl(142 71% 45% / 0.4)",
+      "--gradient-bull-to": "hsl(142 71% 45% / 0)",
+      "--gradient-bear-from": "hsl(0 84% 60% / 0.4)",
+      "--gradient-bear-to": "hsl(0 84% 60% / 0)",
+      "--shadow-hot": "0 0 0 1px hsl(43 96% 56% / 0.4), 0 0 24px hsl(43 96% 56% / 0.25)",
+      "--shadow-bull": "0 0 0 1px hsl(142 71% 45% / 0.3)",
+      "--shadow-bear": "0 0 0 1px hsl(0 84% 60% / 0.3)",
+      "--sidebar-width-mt": "17rem",
+      "--sidebar-width-icon-mt": "3.25rem",
+      "--chrome-header-h": "3.5rem",
+      "--z-header": "20",
+      "--z-sidebar": "30",
+      "--z-rail": "40",
+      "--z-overlay": "50",
+      "--radius-bubble-sm": "14px",
+      "--radius-bubble-md": "22px",
+      "--radius-bubble-lg": "32px",
+      "--radius-bubble-pill": "9999px",
+      "--glass-tint-card": "hsl(220 14% 96% / 0.55)",
+      "--glass-tint-nav": "hsl(220 14% 98% / 0.65)",
+      "--glass-tint-modal": "hsl(220 14% 98% / 0.75)",
+      "--glass-edge": "hsl(0 0% 100% / 0.35)",
+      "--glass-blur": "20px",
+      "--glass-saturate": "140%",
+      "--shadow-bubble-rest": "0 1px 2px hsl(220 14% 4% / 0.04), 0 8px 24px hsl(220 14% 4% / 0.08), inset 0 1px 0 hsl(0 0% 100% / 0.4)",
+      "--shadow-bubble-hover": "0 2px 4px hsl(220 14% 4% / 0.06), 0 16px 40px hsl(220 14% 4% / 0.12), inset 0 1px 0 hsl(0 0% 100% / 0.5)",
+      "--shadow-bubble-press": "0 1px 1px hsl(220 14% 4% / 0.08), 0 4px 12px hsl(220 14% 4% / 0.1), inset 0 1px 2px hsl(220 14% 4% / 0.06)",
+      "--spring-bouncy": "'{\"type\":\"spring\",\"stiffness\":520,\"damping\":18,\"mass\":0.6}'",
+      "--spring-gentle": "'{\"type\":\"spring\",\"stiffness\":260,\"damping\":28}'",
+      "--spring-snappy": "'{\"type\":\"spring\",\"stiffness\":420,\"damping\":34}'",
+      "--chart-1": "var(--color-bull)",
+      "--chart-2": "var(--color-bear)",
+      "--chart-3": "var(--color-gold)",
+      "--chart-4": "var(--color-violet)",
+      "--chart-5": "var(--color-cyan)"
+    },
+    "[data-theme=\"moneytrees\"].dark": {
+      "--background": "hsl(220 7% 13%)",
+      "--foreground": "hsl(0 0% 96%)",
+      "--card": "hsl(220 7% 16%)",
+      "--card-foreground": "hsl(0 0% 96%)",
+      "--popover": "hsl(220 7% 16%)",
+      "--popover-foreground": "hsl(0 0% 96%)",
+      "--primary": "hsl(43 96% 56%)",
+      "--primary-foreground": "hsl(220 7% 13%)",
+      "--secondary": "hsl(220 7% 18%)",
+      "--secondary-foreground": "hsl(0 0% 96%)",
+      "--muted": "hsl(220 7% 18%)",
+      "--muted-foreground": "hsl(220 9% 68%)",
+      "--accent": "hsl(220 7% 21%)",
+      "--accent-foreground": "hsl(0 0% 96%)",
+      "--border": "hsl(220 7% 22%)",
+      "--input": "hsl(220 7% 22%)",
+      "--ring": "hsl(43 96% 56%)",
+      "--sidebar": "hsl(220 7% 15% / 0.45)",
+      "--sidebar-foreground": "hsl(0 0% 96%)",
+      "--sidebar-primary": "hsl(43 96% 56%)",
+      "--sidebar-primary-foreground": "hsl(220 7% 13%)",
+      "--sidebar-accent": "hsl(43 96% 60% / 0.18)",
+      "--sidebar-accent-foreground": "hsl(0 0% 98%)",
+      "--sidebar-border": "hsl(0 0% 100% / 0.08)",
+      "--sidebar-ring": "hsl(43 96% 56%)",
+      "--color-gold-fg": "hsl(43 96% 62%)",
+      "--color-cyan-fg": "hsl(189 94% 62%)",
+      "--color-silver": "hsl(220 9% 72%)",
+      "--color-bronze": "hsl(28 65% 58%)",
+      "--glass-tint-card": "hsl(220 7% 20% / 0.38)",
+      "--glass-tint-nav": "hsl(220 7% 15% / 0.42)",
+      "--glass-tint-modal": "hsl(220 7% 18% / 0.55)",
+      "--glass-edge": "hsl(0 0% 100% / 0.12)",
+      "--glass-blur": "28px",
+      "--glass-saturate": "180%",
+      "--shadow-bubble-rest": "0 1px 1px hsl(0 0% 0% / 0.25), 0 8px 28px hsl(0 0% 0% / 0.4), inset 0 1px 0 hsl(0 0% 100% / 0.12), inset 0 -1px 0 hsl(0 0% 0% / 0.2)",
+      "--shadow-bubble-hover": "0 2px 3px hsl(0 0% 0% / 0.3), 0 16px 40px hsl(0 0% 0% / 0.5), inset 0 1px 0 hsl(0 0% 100% / 0.18), inset 0 -1px 0 hsl(0 0% 0% / 0.25)",
+      "--shadow-bubble-press": "0 1px 1px hsl(0 0% 0% / 0.4), 0 4px 12px hsl(0 0% 0% / 0.45), inset 0 1px 2px hsl(0 0% 0% / 0.3)"
+    },
+    "@keyframes mt-new-row": {
+      "0%": {
+        "background-color": "hsl(43 96% 56% / 0.18)"
+      },
+      "100%": {
+        "background-color": "transparent"
+      }
+    },
+    ".mt-new-row": {
+      "animation": "mt-new-row 1.2s ease-out forwards"
+    },
+    "@media (prefers-reduced-motion: reduce)": {
+      ".mt-new-row": {
+        "animation": "none"
+      },
+      ".mt-price-up, .mt-price-down": {
+        "animation": "none"
+      }
+    },
+    "@keyframes mt-price-up": {
+      "0%": {
+        "background-color": "var(--color-bull-soft)"
+      },
+      "100%": {
+        "background-color": "transparent"
+      }
+    },
+    "@keyframes mt-price-down": {
+      "0%": {
+        "background-color": "var(--color-bear-soft)"
+      },
+      "100%": {
+        "background-color": "transparent"
+      }
+    },
+    ".mt-price-up": {
+      "animation": "mt-price-up 1.2s ease-out forwards",
+      "border-radius": "4px"
+    },
+    ".mt-price-down": {
+      "animation": "mt-price-down 1.2s ease-out forwards",
+      "border-radius": "4px"
+    },
+    "[data-theme=\"moneytrees\"] .mt-hot": {
+      "box-shadow": "var(--shadow-hot)"
+    },
+    "[data-theme=\"moneytrees\"] .driver-popover": {
+      "background-color": "hsl(220 14% 6%)",
+      "color": "hsl(0 0% 98%)",
+      "border": "1px solid hsl(220 14% 12%)"
+    },
+    "[data-theme=\"moneytrees\"] .driver-popover-title, [data-theme=\"moneytrees\"] .driver-popover-description": {
+      "color": "hsl(0 0% 98%)"
+    },
+    "[data-theme=\"moneytrees\"] .driver-popover-arrow-side-top": {
+      "border-top-color": "hsl(220 14% 6%)"
+    },
+    "[data-theme=\"moneytrees\"] .driver-popover-arrow-side-bottom": {
+      "border-bottom-color": "hsl(220 14% 6%)"
+    },
+    "[data-theme=\"moneytrees\"] .driver-popover-arrow-side-left": {
+      "border-left-color": "hsl(220 14% 6%)"
+    },
+    "[data-theme=\"moneytrees\"] .driver-popover-arrow-side-right": {
+      "border-right-color": "hsl(220 14% 6%)"
+    },
+    "[data-theme=\"moneytrees\"] .mt-liquid-css": {
+      "background-color": "var(--glass-tint-card)",
+      "-webkit-backdrop-filter": "blur(var(--glass-blur)) saturate(var(--glass-saturate))",
+      "backdrop-filter": "blur(var(--glass-blur)) saturate(var(--glass-saturate))",
+      "border": "1px solid var(--glass-edge)",
+      "box-shadow": "var(--shadow-bubble-rest)",
+      "transition": "box-shadow 240ms ease, transform 200ms ease"
+    },
+    "[data-theme=\"moneytrees\"] .mt-liquid-css[data-variant=\"nav\"]": {
+      "background-color": "var(--glass-tint-nav)",
+      "box-shadow": "12px 0 44px -18px hsl(0 0% 0% / 0.55)"
+    },
+    "[data-theme=\"moneytrees\"] .mt-liquid-css[data-variant=\"modal\"]": {
+      "background-color": "var(--glass-tint-modal)"
+    },
+    "[data-theme=\"moneytrees\"] .mt-liquid-css:hover": {
+      "box-shadow": "var(--shadow-bubble-hover)"
+    },
+    "[data-theme=\"moneytrees\"] .mt-liquid-css:active": {
+      "box-shadow": "var(--shadow-bubble-press)"
+    },
+    "[data-theme=\"moneytrees\"].dark body": {
+      "background-color": "var(--color-background)",
+      "background-image": "radial-gradient(at 18% 22%, hsl(263 70% 60% / 0.28) 0px, transparent 55%), radial-gradient(at 82% 12%, hsl(189 94% 55% / 0.22) 0px, transparent 55%), radial-gradient(at 50% 90%, hsl(43 96% 56% / 0.18) 0px, transparent 60%), radial-gradient(at 78% 55%, hsl(263 70% 60% / 0.16) 0px, transparent 55%), radial-gradient(at 12% 70%, hsl(189 94% 55% / 0.12) 0px, transparent 55%)",
+      "background-attachment": "fixed"
+    },
+    "[data-theme=\"moneytrees\"]:not(.dark) body": {
+      "background-color": "var(--color-background)",
+      "background-image": "radial-gradient(at 18% 22%, hsl(263 70% 70% / 0.22) 0px, transparent 55%), radial-gradient(at 82% 12%, hsl(189 94% 65% / 0.18) 0px, transparent 55%), radial-gradient(at 50% 90%, hsl(43 96% 65% / 0.18) 0px, transparent 60%)",
+      "background-attachment": "fixed"
+    },
+    "[data-theme=\"moneytrees\"] [data-slot=\"tooltip-content\"], [data-theme=\"moneytrees\"] [role=\"tooltip\"], [data-theme=\"moneytrees\"] [data-radix-popper-content-wrapper] > *": {
+      "background-color": "var(--glass-tint-modal) !important",
+      "-webkit-backdrop-filter": "blur(var(--glass-blur)) saturate(var(--glass-saturate))",
+      "backdrop-filter": "blur(var(--glass-blur)) saturate(var(--glass-saturate))",
+      "border": "1px solid var(--glass-edge) !important",
+      "box-shadow": "var(--shadow-bubble-rest)",
+      "color": "var(--color-foreground)"
+    }
+  },
+  "categories": [
+    "theme",
+    "moneytrees"
+  ],
+  "docs": "Merged into your Tailwind v4 CSS entry (cssVars → :root/.dark/@theme inline, css → appended rules). Source: packages/moneytrees-ui/src/styles/moneytrees.css.",
+  "meta": {
+    "family": "theme",
+    "source": "packages/moneytrees-ui/src/styles/moneytrees.css"
+  }
+}

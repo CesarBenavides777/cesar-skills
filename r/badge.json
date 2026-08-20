@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "type": "registry:ui",
+  "title": "Badge",
+  "description": "Badge — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "class-variance-authority@^0.7.1"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/components/ui/badge.tsx",
+      "type": "registry:ui",
+      "target": "@ui/badge.tsx",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst badgeVariants = cva(\n  \"inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2\",\n  {\n    variants: {\n      variant: {\n        default: \"border-transparent bg-primary text-primary-foreground hover:bg-primary/80\",\n        secondary:\n          \"border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80\",\n        destructive:\n          \"border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80\",\n        outline: \"text-foreground\",\n        bubble:\n          \"rounded-[var(--radius-bubble-pill,9999px)] bg-[var(--glass-tint-card)] border-[var(--glass-edge)] text-foreground backdrop-blur-[12px] backdrop-saturate-[140%] [box-shadow:var(--shadow-bubble-rest)]\",\n        bull: \"rounded-[var(--radius-bubble-pill,9999px)] border-[var(--color-bull-soft,transparent)] bg-[var(--color-bull-soft)] text-[var(--color-bull-fg)] backdrop-blur-[8px]\",\n        bear: \"rounded-[var(--radius-bubble-pill,9999px)] border-[var(--color-bear-soft,transparent)] bg-[var(--color-bear-soft)] text-[var(--color-bear-fg)] backdrop-blur-[8px]\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  },\n);\n\nexport interface BadgeProps\n  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof badgeVariants> {}\n\nfunction Badge({ className, variant, ...props }: BadgeProps) {\n  return <div className={cn(badgeVariants({ variant }), className)} {...props} />;\n}\n\nexport { Badge, badgeVariants };\n"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "family": "ui",
+    "source": "packages/ui/src/components/ui"
+  }
+}

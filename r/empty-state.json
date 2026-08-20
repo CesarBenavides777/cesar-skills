@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-state",
+  "type": "registry:ui",
+  "title": "Empty State",
+  "description": "Unified empty-state card. Replaces the repeated `rounded-lg border bg-card p-6 text-center` info blocks scattered across dashboards so \"nothing here yet\" reads consistently everywhere.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "files": [
+    {
+      "path": "packages/ui/src/components/ui/empty-state.tsx",
+      "type": "registry:ui",
+      "target": "@ui/empty-state.tsx",
+      "content": "import type { ReactNode } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * Unified empty-state card. Replaces the repeated\n * `rounded-lg border bg-card p-6 text-center` info blocks scattered across\n * dashboards so \"nothing here yet\" reads consistently everywhere.\n */\nexport function EmptyState({\n  icon,\n  title,\n  description,\n  action,\n  className,\n}: {\n  icon?: ReactNode;\n  title: string;\n  description?: ReactNode;\n  action?: ReactNode;\n  className?: string;\n}) {\n  return (\n    <div\n      className={cn(\n        \"flex flex-col items-center justify-center gap-2 rounded-lg border bg-card p-8 text-center\",\n        className,\n      )}\n    >\n      {icon && <div className=\"text-muted-foreground [&>svg]:size-6\">{icon}</div>}\n      <p className=\"text-sm font-medium text-foreground\">{title}</p>\n      {description && <p className=\"max-w-md text-sm text-muted-foreground\">{description}</p>}\n      {action && <div className=\"mt-2\">{action}</div>}\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "family": "ui",
+    "source": "packages/ui/src/components/ui"
+  }
+}

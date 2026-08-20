@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-mobile",
+  "type": "registry:hook",
+  "title": "Use Mobile",
+  "description": "Use Mobile — shared helper from @workspace/ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "files": [
+    {
+      "path": "packages/ui/src/hooks/use-mobile.tsx",
+      "type": "registry:hook",
+      "target": "@hooks/use-mobile.tsx",
+      "content": "import * as React from \"react\";\n\nconst MOBILE_BREAKPOINT = 768;\n\nexport function useIsMobile() {\n  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined);\n\n  React.useEffect(() => {\n    const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);\n    const onChange = () => {\n      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);\n    };\n    mql.addEventListener(\"change\", onChange);\n    setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);\n    return () => mql.removeEventListener(\"change\", onChange);\n  }, []);\n\n  return !!isMobile;\n}\n"
+    }
+  ],
+  "categories": [
+    "hooks"
+  ],
+  "meta": {
+    "family": "shared",
+    "source": "packages/ui/src/hooks"
+  }
+}

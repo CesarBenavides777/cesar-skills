@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-provider",
+  "type": "registry:component",
+  "title": "Theme Provider",
+  "description": "Theme Provider — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "files": [
+    {
+      "path": "packages/moneytrees-ui/src/components/theme-provider.tsx",
+      "type": "registry:component",
+      "target": "@components/moneytrees/theme-provider.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\ntype Props = {\n  enabled?: boolean;\n  children: React.ReactNode;\n};\n\nexport function MoneytreesThemeProvider({ enabled = true, children }: Props) {\n  React.useEffect(() => {\n    if (typeof document === \"undefined\") return;\n    const el = document.documentElement;\n    if (enabled) {\n      el.setAttribute(\"data-theme\", \"moneytrees\");\n      return () => {\n        if (el.getAttribute(\"data-theme\") === \"moneytrees\") {\n          el.removeAttribute(\"data-theme\");\n        }\n      };\n    }\n  }, [enabled]);\n\n  return <>{children}</>;\n}\n"
+    }
+  ],
+  "categories": [
+    "moneytrees"
+  ],
+  "meta": {
+    "family": "moneytrees",
+    "source": "packages/moneytrees-ui/src/components"
+  }
+}

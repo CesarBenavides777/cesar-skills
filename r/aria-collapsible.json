@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aria-collapsible",
+  "type": "registry:ui",
+  "title": "Aria Collapsible",
+  "description": "Aria Collapsible — React Aria Components primitive from @workspace/ui (aria family).",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "react-aria-components@^1.20.0"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/components/aria/collapsible.tsx",
+      "type": "registry:ui",
+      "target": "@components/aria/collapsible.tsx",
+      "content": "\"use client\";\n\nimport {\n  DisclosurePanel as CollapsibleContentPrimitive,\n  Disclosure as CollapsiblePrimitive,\n  Button as CollapsibleTriggerPrimitive,\n  type ButtonProps,\n  type DisclosurePanelProps,\n  type DisclosureProps,\n} from \"react-aria-components\";\n\nfunction Collapsible({ ...props }: DisclosureProps) {\n  return <CollapsiblePrimitive data-slot=\"collapsible\" {...props} />;\n}\n\nfunction CollapsibleTrigger({ ...props }: ButtonProps) {\n  return <CollapsibleTriggerPrimitive slot=\"trigger\" data-slot=\"collapsible-trigger\" {...props} />;\n}\n\nfunction CollapsibleContent({ ...props }: DisclosurePanelProps) {\n  return <CollapsibleContentPrimitive data-slot=\"collapsible-content\" {...props} />;\n}\n\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent };\n"
+    }
+  ],
+  "categories": [
+    "ui",
+    "aria"
+  ],
+  "meta": {
+    "family": "aria",
+    "source": "packages/ui/src/components/aria"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "moneytrees-ui",
+  "type": "registry:item",
+  "title": "moneytrees UI (everything)",
+  "description": "Every moneytrees component plus the moneytrees theme, in one install.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/agent-card.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/bending-sidebar.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/data-table-v2.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/liquid-surface.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/live-feed-table.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/moneytrees-logo.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/moneytrees-theme.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/onboarding-tour.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/pnl-badge.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/sentiment-meter.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/theme-provider.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/ticker-card.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/ticker-chart.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/usage-meter.json"
+  ],
+  "categories": [
+    "moneytrees",
+    "bundle"
+  ],
+  "meta": {
+    "family": "moneytrees",
+    "registryDependencyNames": [
+      "agent-card",
+      "bending-sidebar",
+      "data-table-v2",
+      "liquid-surface",
+      "live-feed-table",
+      "moneytrees-logo",
+      "moneytrees-theme",
+      "onboarding-tour",
+      "pnl-badge",
+      "sentiment-meter",
+      "theme-provider",
+      "ticker-card",
+      "ticker-chart",
+      "usage-meter"
+    ]
+  }
+}

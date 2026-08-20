@@ -69,6 +69,13 @@ for how to execute without burning the quota.
    grid — **one column per route/flow, one row per state** (default, loading, empty, locked,
    error, dialogs), 120px gutters, ≤ 9 columns per band, a 400px gap between bands. Keep the
    layout map in code (route → column, state → row) so a re-run lands in the same place.
+   Rows are canonical states — Default · Loading · Empty · Gated/not-found · Error/filtered ·
+   Dialog/overlay · Variants — so the same row means the same thing in every column. Add
+   **axis title frames**: a column-title artboard above every column (route name + board
+   count) and a row-title artboard at the left of every band (state name), with **very big
+   text (≈128px, weight 800, tight tracking)** so the grid reads at canvas zoom-out. Name
+   them `Axis · column · <Route>` / `Axis · row · <State>` and position them in the same
+   batched call as the boards.
 10. **State the budget before starting** ("~40 calls: 3 screens × ~12 + 4 screenshots")
    and check Paper's usage meter before a long session.
 

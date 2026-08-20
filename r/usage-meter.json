@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "usage-meter",
+  "type": "registry:component",
+  "title": "Usage Meter",
+  "description": "Usage Meter — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "motion@^12.43.0"
+  ],
+  "files": [
+    {
+      "path": "packages/moneytrees-ui/src/components/usage-meter.tsx",
+      "type": "registry:component",
+      "target": "@components/moneytrees/usage-meter.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { motion, useReducedMotion } from \"motion/react\";\nimport { cn } from \"@/lib/utils\";\n\ntype Props = {\n  label: string;\n  used: number;\n  cap: number;\n  unit?: string;\n  className?: string;\n};\n\nexport function UsageMeter({ label, used, cap, unit, className }: Props) {\n  const reduced = useReducedMotion();\n  const pct = cap === Infinity ? 0 : Math.min(100, (used / cap) * 100);\n  const color =\n    pct < 60\n      ? \"bg-[var(--color-bull)]\"\n      : pct < 85\n        ? \"bg-[var(--color-gold)]\"\n        : \"bg-[var(--color-bear)]\";\n\n  const display =\n    cap === Infinity\n      ? `${used.toLocaleString()} ${unit ?? \"\"}`.trim()\n      : `${used.toLocaleString()} / ${cap.toLocaleString()}${unit ? ` ${unit}` : \"\"}`;\n\n  return (\n    <div className={cn(\"space-y-1\", className)}>\n      <div className=\"flex items-center justify-between text-xs\">\n        <span className=\"text-muted-foreground\">{label}</span>\n        <span className=\"tabular-nums\">{display}</span>\n      </div>\n      <div className=\"h-1.5 w-full overflow-hidden rounded-full bg-muted\">\n        {cap === Infinity ? (\n          <div className=\"h-full w-full bg-[var(--color-gold)] opacity-40\" />\n        ) : (\n          <motion.div\n            className={cn(\"h-full rounded-full\", color)}\n            initial={reduced ? false : { width: 0 }}\n            animate={{ width: `${pct}%` }}\n            transition={{ duration: reduced ? 0 : 0.4, ease: \"easeOut\" }}\n          />\n        )}\n      </div>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "moneytrees"
+  ],
+  "meta": {
+    "family": "moneytrees",
+    "source": "packages/moneytrees-ui/src/components"
+  }
+}

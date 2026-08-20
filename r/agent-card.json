@@ -1,0 +1,40 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "agent-card",
+  "type": "registry:component",
+  "title": "Agent Card",
+  "description": "Agent Card — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "lucide-react@^0.460.0"
+  ],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-button.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-card.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-dropdown-menu.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/pnl-badge.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/ticker-chart.json"
+  ],
+  "files": [
+    {
+      "path": "packages/moneytrees-ui/src/components/agent-card.tsx",
+      "type": "registry:component",
+      "target": "@components/moneytrees/agent-card.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Bot, Circle, MoreVertical } from \"lucide-react\";\nimport { Card } from \"@/components/aria/card\";\nimport {\n  DropdownMenu,\n  DropdownMenuItem,\n  DropdownMenuSeparator,\n  DropdownMenuTrigger,\n} from \"@/components/aria/dropdown-menu\";\nimport { Button } from \"@/components/aria/button\";\nimport { PnLBadge } from \"@/components/moneytrees/pnl-badge\";\nimport { TickerChart, type TickerPoint } from \"@/components/moneytrees/ticker-chart\";\nimport { cn } from \"@/lib/utils\";\n\ntype AgentStatus = \"active\" | \"paused\" | \"liquidated\";\n\ntype Props = {\n  name: string;\n  status: AgentStatus;\n  mode: \"paper\" | \"live\";\n  budget: number;\n  balance: number;\n  pnl: number;\n  pnlPercent?: number;\n  spark?: TickerPoint[];\n  onPause?: () => void;\n  onResume?: () => void;\n  onEdit?: () => void;\n  onKill?: () => void;\n  onClick?: () => void;\n  className?: string;\n};\n\nconst statusColor: Record<AgentStatus, string> = {\n  active: \"text-[var(--color-bull)]\",\n  paused: \"text-muted-foreground\",\n  liquidated: \"text-[var(--color-bear)]\",\n};\n\nexport function AgentCard({\n  name,\n  status,\n  mode,\n  budget,\n  balance,\n  pnl,\n  pnlPercent,\n  spark,\n  onPause,\n  onResume,\n  onEdit,\n  onKill,\n  onClick,\n  className,\n}: Props) {\n  return (\n    <Card\n      className={cn(\"cursor-pointer p-card transition-colors hover:bg-accent/30\", className)}\n      onClick={onClick}\n    >\n      <div className=\"flex items-start justify-between gap-2\">\n        <div className=\"flex items-center gap-2 min-w-0\">\n          <div className=\"flex size-8 shrink-0 items-center justify-center rounded-md bg-[var(--color-gold-soft)] text-[var(--color-gold)]\">\n            <Bot className=\"size-4\" />\n          </div>\n          <div className=\"min-w-0\">\n            <div className=\"flex items-center gap-1.5\">\n              <span className=\"truncate text-sm font-semibold\">{name}</span>\n              <Circle\n                className={cn(\"size-2 fill-current\", statusColor[status])}\n                aria-label={status}\n              />\n            </div>\n            <div className=\"text-xs text-muted-foreground capitalize\">\n              {mode} · {status}\n            </div>\n          </div>\n        </div>\n        <DropdownMenuTrigger>\n          <Button\n            variant=\"ghost\"\n            size=\"icon\"\n            className=\"size-7\"\n            onClick={(e) => e.stopPropagation()}\n          >\n            <MoreVertical className=\"size-4\" />\n          </Button>\n          <DropdownMenu placement=\"bottom end\">\n            {status === \"active\" && onPause && (\n              <DropdownMenuItem onAction={onPause}>Pause</DropdownMenuItem>\n            )}\n            {status === \"paused\" && onResume && (\n              <DropdownMenuItem onAction={onResume}>Resume</DropdownMenuItem>\n            )}\n            {onEdit && <DropdownMenuItem onAction={onEdit}>Edit</DropdownMenuItem>}\n            {onKill && (\n              <>\n                <DropdownMenuSeparator />\n                <DropdownMenuItem onAction={onKill} className=\"text-[var(--color-bear)]\">\n                  Kill\n                </DropdownMenuItem>\n              </>\n            )}\n          </DropdownMenu>\n        </DropdownMenuTrigger>\n      </div>\n\n      <div className=\"mt-3 grid grid-cols-3 gap-2 text-xs\">\n        <div>\n          <div className=\"text-muted-foreground\">Budget</div>\n          <div className=\"mt-type-numeric\">${budget.toLocaleString()}</div>\n        </div>\n        <div>\n          <div className=\"text-muted-foreground\">Balance</div>\n          <div className=\"mt-type-numeric\">\n            ${balance.toLocaleString(undefined, { maximumFractionDigits: 2 })}\n          </div>\n        </div>\n        <div>\n          <div className=\"text-muted-foreground\">P&amp;L</div>\n          <PnLBadge value={pnl} percent={pnlPercent} size=\"sm\" />\n        </div>\n      </div>\n\n      {spark && spark.length > 0 && (\n        <div className=\"mt-3\">\n          <TickerChart data={spark} variant=\"sparkline\" height={32} />\n        </div>\n      )}\n    </Card>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "moneytrees"
+  ],
+  "meta": {
+    "family": "moneytrees",
+    "source": "packages/moneytrees-ui/src/components",
+    "registryDependencyNames": [
+      "aria-button",
+      "aria-card",
+      "aria-dropdown-menu",
+      "pnl-badge",
+      "ticker-chart"
+    ]
+  }
+}

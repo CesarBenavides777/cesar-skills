@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "liquid-surface",
+  "type": "registry:component",
+  "title": "Liquid Surface",
+  "description": "LiquidSurface — the bubbly liquid-glass primitive for moneytrees.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "class-variance-authority@^0.7.1",
+    "motion@^12.43.0"
+  ],
+  "files": [
+    {
+      "path": "packages/moneytrees-ui/src/components/liquid-surface.tsx",
+      "type": "registry:component",
+      "target": "@components/moneytrees/liquid-surface.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { motion, useReducedMotion } from \"motion/react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * LiquidSurface — the bubbly liquid-glass primitive for moneytrees.\n *\n * Wraps any DOM subtree in a glass surface: `backdrop-filter: blur()` via\n * `.mt-liquid-css` plus the bubble radius + shadow tokens from the moneytrees\n * theme. `data-variant` selects the tint (card / nav / modal).\n */\nconst liquidSurfaceVariants = cva(\"mt-liquid-css relative\", {\n  variants: {\n    variant: {\n      card: \"rounded-bubble-md\",\n      \"card-lg\": \"rounded-bubble-lg\",\n      pill: \"rounded-bubble-pill\",\n      nav: \"rounded-bubble-md\",\n      modal: \"rounded-bubble-lg\",\n    },\n  },\n  defaultVariants: { variant: \"card\" },\n});\n\ntype LiquidSurfaceProps = Omit<\n  React.HTMLAttributes<HTMLDivElement>,\n  \"onAnimationStart\" | \"onAnimationEnd\" | \"onDrag\" | \"onDragStart\" | \"onDragEnd\"\n> &\n  VariantProps<typeof liquidSurfaceVariants> & {\n    /** Apply hover spring (lift on pointer over). Disabled under reduced motion. */\n    interactive?: boolean;\n    /** Override the data-variant attribute (controls CSS tier tint). */\n    surfaceKind?: \"card\" | \"nav\" | \"modal\";\n    children?: React.ReactNode;\n  };\n\nexport const LiquidSurface = React.forwardRef<HTMLDivElement, LiquidSurfaceProps>(\n  function LiquidSurface(\n    { className, variant, interactive = false, surfaceKind, children, ...rest },\n    ref,\n  ) {\n    const reduced = useReducedMotion();\n    const kind = surfaceKind ?? mapVariantToKind(variant);\n\n    if (!interactive || reduced) {\n      return (\n        <div\n          ref={ref}\n          data-variant={kind}\n          className={cn(liquidSurfaceVariants({ variant }), className)}\n          {...rest}\n        >\n          {children}\n        </div>\n      );\n    }\n    return (\n      <motion.div\n        ref={ref}\n        whileHover={{ y: -2 }}\n        whileTap={{ scale: 0.985 }}\n        transition={{ type: \"spring\", stiffness: 420, damping: 30 }}\n        data-variant={kind}\n        className={cn(liquidSurfaceVariants({ variant }), className)}\n        {...(rest as React.ComponentProps<typeof motion.div>)}\n      >\n        {children}\n      </motion.div>\n    );\n  },\n);\n\nfunction mapVariantToKind(\n  variant: VariantProps<typeof liquidSurfaceVariants>[\"variant\"],\n): \"card\" | \"nav\" | \"modal\" {\n  switch (variant) {\n    case \"nav\":\n      return \"nav\";\n    case \"modal\":\n      return \"modal\";\n    default:\n      return \"card\";\n  }\n}\n"
+    }
+  ],
+  "categories": [
+    "moneytrees"
+  ],
+  "meta": {
+    "family": "moneytrees",
+    "source": "packages/moneytrees-ui/src/components"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible",
+  "type": "registry:ui",
+  "title": "Collapsible",
+  "description": "Collapsible — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "@radix-ui/react-collapsible@^1.1.20"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/components/ui/collapsible.tsx",
+      "type": "registry:ui",
+      "target": "@ui/collapsible.tsx",
+      "content": "\"use client\";\n\nimport * as CollapsiblePrimitive from \"@radix-ui/react-collapsible\";\n\nconst Collapsible = CollapsiblePrimitive.Root;\n\nconst CollapsibleTrigger = CollapsiblePrimitive.CollapsibleTrigger;\n\nconst CollapsibleContent = CollapsiblePrimitive.CollapsibleContent;\n\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent };\n"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "family": "ui",
+    "source": "packages/ui/src/components/ui"
+  }
+}

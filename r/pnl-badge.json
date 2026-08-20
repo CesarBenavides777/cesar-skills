@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pnl-badge",
+  "type": "registry:component",
+  "title": "Pnl Badge",
+  "description": "Pnl Badge — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "lucide-react@^0.460.0"
+  ],
+  "files": [
+    {
+      "path": "packages/moneytrees-ui/src/components/pnl-badge.tsx",
+      "type": "registry:component",
+      "target": "@components/moneytrees/pnl-badge.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { ArrowDownRight, ArrowUpRight, Minus } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\n\ntype Props = {\n  value: number;\n  percent?: number;\n  currency?: string;\n  /**\n   * `xs` is a dense variant that drops the vertical padding — for tight\n   * surfaces like the dashboard marquee where a full badge would blow out the\n   * row height. Replaces the previous `!py-0` utility override.\n   */\n  size?: \"xs\" | \"sm\" | \"md\";\n  className?: string;\n  showSign?: boolean;\n};\n\nexport function PnLBadge({\n  value,\n  percent,\n  currency = \"$\",\n  size = \"md\",\n  className,\n  showSign = true,\n}: Props) {\n  const variant: \"bull\" | \"bear\" | \"neutral\" =\n    Math.abs(value) < 1e-6 ? \"neutral\" : value > 0 ? \"bull\" : \"bear\";\n\n  const sign = value > 0 ? \"+\" : value < 0 ? \"\" : \"\";\n  const dollar = `${sign}${currency}${Math.abs(value).toFixed(2)}`;\n  // A divide-by-zero upstream yields Infinity/NaN, which `toFixed` renders as\n  // a literal \"Infinity%\" or \"NaN%\". Showing no percentage is more honest than\n  // showing a fabricated one.\n  const pct =\n    percent === undefined || !Number.isFinite(percent)\n      ? null\n      : `${percent > 0 ? \"+\" : \"\"}${percent.toFixed(2)}%`;\n\n  const Icon = variant === \"bull\" ? ArrowUpRight : variant === \"bear\" ? ArrowDownRight : Minus;\n\n  const base = \"inline-flex items-center gap-1 rounded-md font-medium tabular-nums\";\n  const sizing =\n    size === \"xs\"\n      ? \"text-xs px-1.5 py-0\"\n      : size === \"sm\"\n        ? \"text-xs px-1.5 py-0.5\"\n        : \"text-sm px-2 py-1\";\n  const palette =\n    variant === \"bull\"\n      ? \"bg-[var(--color-bull-soft)] text-[var(--color-bull-fg)]\"\n      : variant === \"bear\"\n        ? \"bg-[var(--color-bear-soft)] text-[var(--color-bear-fg)]\"\n        : \"bg-muted text-muted-foreground\";\n\n  return (\n    <span className={cn(base, sizing, palette, className)}>\n      <Icon className=\"size-3\" aria-hidden=\"true\" />\n      {showSign && <span>{dollar}</span>}\n      {pct !== null && <span className=\"opacity-75\">{pct}</span>}\n    </span>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "moneytrees"
+  ],
+  "meta": {
+    "family": "moneytrees",
+    "source": "packages/moneytrees-ui/src/components"
+  }
+}

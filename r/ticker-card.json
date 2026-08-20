@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ticker-card",
+  "type": "registry:component",
+  "title": "Ticker Card",
+  "description": "Bubbly ticker card. Wraps content in a `LiquidSurface` so the surface inherits the active rendering tier (native canvas, polyfilled, or CSS). The `hot` flag adds the gold glow shadow on top of the bubble shadow stack.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/liquid-surface.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/pnl-badge.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/ticker-chart.json"
+  ],
+  "files": [
+    {
+      "path": "packages/moneytrees-ui/src/components/ticker-card.tsx",
+      "type": "registry:component",
+      "target": "@components/moneytrees/ticker-card.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { PnLBadge } from \"@/components/moneytrees/pnl-badge\";\nimport { TickerChart, type TickerPoint } from \"@/components/moneytrees/ticker-chart\";\nimport { LiquidSurface } from \"@/components/moneytrees/liquid-surface\";\nimport { cn } from \"@/lib/utils\";\n\ntype Props = {\n  symbol: string;\n  name?: string;\n  price: number;\n  change24h?: number;\n  changePercent24h?: number;\n  spark?: TickerPoint[];\n  hot?: boolean;\n  className?: string;\n  onClick?: () => void;\n  /** Inline action(s) rendered bottom-right; clicks don't trigger `onClick`. */\n  actions?: React.ReactNode;\n};\n\n/**\n * Bubbly ticker card. Wraps content in a `LiquidSurface` so the surface\n * inherits the active rendering tier (native canvas, polyfilled, or CSS).\n * The `hot` flag adds the gold glow shadow on top of the bubble shadow stack.\n */\nexport function TickerCard({\n  symbol,\n  name,\n  price,\n  change24h,\n  changePercent24h,\n  spark,\n  hot,\n  className,\n  onClick,\n  actions,\n}: Props) {\n  const formatted =\n    price >= 1\n      ? `$${price.toLocaleString(undefined, { maximumFractionDigits: 2 })}`\n      : `$${price.toPrecision(4)}`;\n\n  // Flash the price element on live updates: bull wash on up, bear on down.\n  const prevPrice = React.useRef(price);\n  const [flash, setFlash] = React.useState<\"up\" | \"down\" | null>(null);\n  React.useEffect(() => {\n    if (price === prevPrice.current) return;\n    setFlash(price > prevPrice.current ? \"up\" : \"down\");\n    prevPrice.current = price;\n    const id = window.setTimeout(() => setFlash(null), 1300);\n    return () => window.clearTimeout(id);\n  }, [price]);\n\n  return (\n    <LiquidSurface\n      variant=\"card\"\n      interactive\n      onClick={onClick}\n      role={onClick ? \"button\" : undefined}\n      tabIndex={onClick ? 0 : undefined}\n      onKeyDown={\n        onClick\n          ? (e: React.KeyboardEvent) => {\n              if (e.key === \"Enter\" || e.key === \" \") {\n                e.preventDefault();\n                onClick();\n              }\n            }\n          : undefined\n      }\n      className={cn(\"relative cursor-pointer p-card text-card-foreground\", hot && \"mt-hot\", className)}\n    >\n      <div className=\"flex items-start justify-between gap-2\">\n        <div className=\"min-w-0\">\n          <div className=\"font-mono text-sm font-semibold leading-none\">${symbol}</div>\n          {name && <div className=\"mt-1 truncate text-xs text-muted-foreground\">{name}</div>}\n        </div>\n        <div className=\"text-right\">\n          <div\n            className={cn(\n              \"font-mono text-sm tabular-nums\",\n              flash === \"up\" && \"mt-price-up\",\n              flash === \"down\" && \"mt-price-down\",\n            )}\n          >\n            {formatted}\n          </div>\n          {change24h !== undefined && (\n            <PnLBadge\n              value={change24h}\n              percent={changePercent24h}\n              size=\"sm\"\n              className=\"mt-1\"\n              showSign={false}\n            />\n          )}\n        </div>\n      </div>\n      {spark && spark.length > 0 && (\n        <div className=\"mt-3\">\n          <TickerChart data={spark} variant=\"sparkline\" height={36} />\n        </div>\n      )}\n      {actions && (\n        <div\n          className=\"absolute bottom-2 left-2\"\n          onClick={(e) => e.stopPropagation()}\n          onKeyDown={(e) => e.stopPropagation()}\n        >\n          {actions}\n        </div>\n      )}\n    </LiquidSurface>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "moneytrees"
+  ],
+  "meta": {
+    "family": "moneytrees",
+    "source": "packages/moneytrees-ui/src/components",
+    "registryDependencyNames": [
+      "liquid-surface",
+      "pnl-badge",
+      "ticker-chart"
+    ]
+  }
+}

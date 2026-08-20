@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card",
+  "type": "registry:ui",
+  "title": "Card",
+  "description": "Card — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "class-variance-authority@^0.7.1"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/components/ui/card.tsx",
+      "type": "registry:ui",
+      "target": "@ui/card.tsx",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst cardVariants = cva(\"text-card-foreground\", {\n  variants: {\n    variant: {\n      default: \"rounded-lg border bg-card shadow-sm\",\n      bubble:\n        \"rounded-bubble-md border border-[var(--glass-edge)] bg-[var(--glass-tint-card)] backdrop-blur-[var(--glass-blur)] backdrop-saturate-[140%] [box-shadow:var(--shadow-bubble-rest)] transition-[transform,box-shadow] duration-200 hover:[box-shadow:var(--shadow-bubble-hover)]\",\n      \"bubble-lg\":\n        \"rounded-bubble-lg border border-[var(--glass-edge)] bg-[var(--glass-tint-card)] backdrop-blur-[var(--glass-blur)] backdrop-saturate-[140%] [box-shadow:var(--shadow-bubble-rest)] transition-[transform,box-shadow] duration-200 hover:[box-shadow:var(--shadow-bubble-hover)]\",\n    },\n  },\n  defaultVariants: { variant: \"default\" },\n});\n\nexport interface CardProps\n  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof cardVariants> {}\n\nconst Card = React.forwardRef<HTMLDivElement, CardProps>(\n  ({ className, variant, ...props }, ref) => (\n    <div ref={ref} className={cn(cardVariants({ variant }), className)} {...props} />\n  ),\n);\nCard.displayName = \"Card\";\n\nconst CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(\n  ({ className, ...props }, ref) => (\n    <div ref={ref} className={cn(\"flex flex-col space-y-1.5 p-6\", className)} {...props} />\n  ),\n);\nCardHeader.displayName = \"CardHeader\";\n\nconst CardTitle = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(\n  ({ className, ...props }, ref) => (\n    <div\n      ref={ref}\n      className={cn(\"text-2xl font-semibold leading-none tracking-tight\", className)}\n      {...props}\n    />\n  ),\n);\nCardTitle.displayName = \"CardTitle\";\n\nconst CardDescription = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(\n  ({ className, ...props }, ref) => (\n    <div ref={ref} className={cn(\"text-sm text-muted-foreground\", className)} {...props} />\n  ),\n);\nCardDescription.displayName = \"CardDescription\";\n\nconst CardAction = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(\n  ({ className, ...props }, ref) => (\n    <div\n      ref={ref}\n      className={cn(\"col-start-2 row-span-2 row-start-1 self-start justify-self-end\", className)}\n      {...props}\n    />\n  ),\n);\nCardAction.displayName = \"CardAction\";\n\nconst CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(\n  ({ className, ...props }, ref) => (\n    <div ref={ref} className={cn(\"p-6 pt-0\", className)} {...props} />\n  ),\n);\nCardContent.displayName = \"CardContent\";\n\nconst CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(\n  ({ className, ...props }, ref) => (\n    <div ref={ref} className={cn(\"flex items-center p-6 pt-0\", className)} {...props} />\n  ),\n);\nCardFooter.displayName = \"CardFooter\";\n\nexport {\n  Card,\n  CardHeader,\n  CardFooter,\n  CardTitle,\n  CardAction,\n  CardDescription,\n  CardContent,\n  cardVariants,\n};\n"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "family": "ui",
+    "source": "packages/ui/src/components/ui"
+  }
+}

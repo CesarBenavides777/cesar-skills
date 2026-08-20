@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sentiment-meter",
+  "type": "registry:component",
+  "title": "Sentiment Meter",
+  "description": "Sentiment Meter — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "motion@^12.43.0"
+  ],
+  "files": [
+    {
+      "path": "packages/moneytrees-ui/src/components/sentiment-meter.tsx",
+      "type": "registry:component",
+      "target": "@components/moneytrees/sentiment-meter.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { motion, useReducedMotion } from \"motion/react\";\nimport { cn } from \"@/lib/utils\";\n\ntype Props = {\n  value: number; // -1..+1\n  size?: \"sm\" | \"md\";\n  showLabels?: boolean;\n  className?: string;\n};\n\nexport function SentimentMeter({ value, size = \"md\", showLabels = true, className }: Props) {\n  const reduced = useReducedMotion();\n  const clamped = Math.max(-1, Math.min(1, value));\n  // -1 -> -90deg, 0 -> 0deg, +1 -> +90deg\n  const angle = clamped * 90;\n\n  const px = size === \"sm\" ? 80 : 120;\n  const h = size === \"sm\" ? 44 : 68;\n\n  return (\n    <div className={cn(\"inline-flex flex-col items-center gap-1\", className)}>\n      <svg\n        width={px}\n        height={h}\n        viewBox=\"0 0 120 68\"\n        aria-hidden=\"true\"\n        className=\"overflow-visible\"\n      >\n        {/* arc */}\n        <defs>\n          <linearGradient id=\"mt-sent-arc\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n            <stop offset=\"0%\" stopColor=\"var(--color-bear)\" />\n            <stop offset=\"50%\" stopColor=\"var(--color-muted-foreground)\" />\n            <stop offset=\"100%\" stopColor=\"var(--color-bull)\" />\n          </linearGradient>\n        </defs>\n        <path\n          d=\"M 8 60 A 52 52 0 0 1 112 60\"\n          fill=\"none\"\n          stroke=\"url(#mt-sent-arc)\"\n          strokeWidth=\"6\"\n          strokeLinecap=\"round\"\n        />\n        {/* needle */}\n        <motion.g\n          style={{ originX: \"60px\", originY: \"60px\" } as React.CSSProperties}\n          initial={reduced ? false : { rotate: 0 }}\n          animate={{ rotate: angle }}\n          transition={{ type: \"spring\", stiffness: 220, damping: 18 }}\n        >\n          <line\n            x1=\"60\"\n            y1=\"60\"\n            x2=\"60\"\n            y2=\"14\"\n            stroke=\"var(--color-foreground)\"\n            strokeWidth=\"2\"\n            strokeLinecap=\"round\"\n          />\n          <circle cx=\"60\" cy=\"60\" r=\"4\" fill=\"var(--color-foreground)\" />\n        </motion.g>\n      </svg>\n      {showLabels && (\n        <div className=\"flex w-full justify-between text-[10px] text-muted-foreground\">\n          <span>Bearish</span>\n          <span>Neutral</span>\n          <span>Bullish</span>\n        </div>\n      )}\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "moneytrees"
+  ],
+  "meta": {
+    "family": "moneytrees",
+    "source": "packages/moneytrees-ui/src/components"
+  }
+}

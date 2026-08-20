@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aria-separator",
+  "type": "registry:ui",
+  "title": "Aria Separator",
+  "description": "Aria Separator — React Aria Components primitive from @workspace/ui (aria family).",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "react-aria-components@^1.20.0"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/components/aria/separator.tsx",
+      "type": "registry:ui",
+      "target": "@components/aria/separator.tsx",
+      "content": "\"use client\";\n\nimport { Separator as SeparatorPrimitive } from \"react-aria-components\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction Separator({\n  className,\n  orientation = \"horizontal\",\n  ...props\n}: React.ComponentProps<typeof SeparatorPrimitive>) {\n  return (\n    <SeparatorPrimitive\n      data-slot=\"separator\"\n      orientation={orientation}\n      className={cn(\n        \"block shrink-0 border-0 bg-border aria-[orientation=horizontal]:h-px aria-[orientation=horizontal]:w-full aria-[orientation=vertical]:w-px aria-[orientation=vertical]:self-stretch [:is(hr)]:h-px [:is(hr)]:w-full\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Separator };\n"
+    }
+  ],
+  "categories": [
+    "ui",
+    "aria"
+  ],
+  "meta": {
+    "family": "aria",
+    "source": "packages/ui/src/components/aria"
+  }
+}

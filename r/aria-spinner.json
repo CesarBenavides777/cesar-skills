@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aria-spinner",
+  "type": "registry:ui",
+  "title": "Aria Spinner",
+  "description": "Aria Spinner — React Aria Components primitive from @workspace/ui (aria family).",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "lucide-react@^0.460.0"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/components/aria/spinner.tsx",
+      "type": "registry:ui",
+      "target": "@components/aria/spinner.tsx",
+      "content": "import { Loader2Icon } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\n\nfunction Spinner({ className, ...props }: React.ComponentProps<\"svg\">) {\n  return <Loader2Icon />;\n}\n\nexport { Spinner };\n"
+    }
+  ],
+  "categories": [
+    "ui",
+    "aria"
+  ],
+  "meta": {
+    "family": "aria",
+    "source": "packages/ui/src/components/aria"
+  }
+}

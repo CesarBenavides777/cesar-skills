@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input",
+  "type": "registry:ui",
+  "title": "Input",
+  "description": "Input — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "class-variance-authority@^0.7.1"
+  ],
+  "files": [
+    {
+      "path": "packages/ui/src/components/ui/input.tsx",
+      "type": "registry:ui",
+      "target": "@ui/input.tsx",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst inputVariants = cva(\n  \"flex h-10 w-full px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm\",\n  {\n    variants: {\n      variant: {\n        default: \"rounded-md border border-input bg-background\",\n        bubble:\n          \"rounded-[var(--radius-bubble-pill,9999px)] border border-[var(--glass-edge)] bg-[var(--glass-tint-card)] backdrop-blur-[12px] backdrop-saturate-[140%] [box-shadow:var(--shadow-bubble-rest)] focus-visible:[box-shadow:var(--shadow-bubble-hover)]\",\n      },\n    },\n    defaultVariants: { variant: \"default\" },\n  },\n);\n\nexport interface InputProps\n  extends Omit<React.ComponentProps<\"input\">, \"size\">, VariantProps<typeof inputVariants> {}\n\nconst Input = React.forwardRef<HTMLInputElement, InputProps>(\n  ({ className, variant, type, ...props }, ref) => {\n    return (\n      <input\n        type={type}\n        className={cn(inputVariants({ variant }), className)}\n        ref={ref}\n        {...props}\n      />\n    );\n  },\n);\nInput.displayName = \"Input\";\n\nexport { Input, inputVariants };\n"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "family": "ui",
+    "source": "packages/ui/src/components/ui"
+  }
+}

@@ -1,0 +1,2958 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "cesar-skills",
+  "homepage": "https://github.com/CesarBenavides777/cesar-skills",
+  "items": [
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Accordion — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-accordion@^1.2.20",
+        "lucide-react@^0.460.0"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/accordion.tsx",
+          "type": "registry:ui",
+          "target": "@ui/accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agent-card",
+      "type": "registry:component",
+      "title": "Agent Card",
+      "description": "Agent Card — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "lucide-react@^0.460.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-button.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-card.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-dropdown-menu.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/pnl-badge.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/ticker-chart.json"
+      ],
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components",
+        "registryDependencyNames": [
+          "aria-button",
+          "aria-card",
+          "aria-dropdown-menu",
+          "pnl-badge",
+          "ticker-chart"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/agent-card.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/agent-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Alert — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/alert.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Alert Dialog — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-alert-dialog@^1.1.23"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/button.json"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui",
+        "registryDependencyNames": [
+          "button"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-accordion",
+      "type": "registry:ui",
+      "title": "Aria Accordion",
+      "description": "Aria Accordion — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "lucide-react@^0.460.0",
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/accordion.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-alert",
+      "type": "registry:ui",
+      "title": "Aria Alert",
+      "description": "Aria Alert — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/alert.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/alert.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-alert-dialog",
+      "type": "registry:ui",
+      "title": "Aria Alert Dialog",
+      "description": "Aria Alert Dialog — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "react-aria-components@^1.20.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-button.json"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria",
+        "registryDependencyNames": [
+          "aria-button"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/alert-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-avatar",
+      "type": "registry:ui",
+      "title": "Aria Avatar",
+      "description": "Aria Avatar — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/avatar.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-badge",
+      "type": "registry:ui",
+      "title": "Aria Badge",
+      "description": "Aria Badge — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/badge.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-button",
+      "type": "registry:ui",
+      "title": "Aria Button",
+      "description": "Aria Button — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/button.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-button-group",
+      "type": "registry:ui",
+      "title": "Aria Button Group",
+      "description": "Aria Button Group — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-separator.json"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria",
+        "registryDependencyNames": [
+          "aria-separator"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/button-group.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/button-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-card",
+      "type": "registry:ui",
+      "title": "Aria Card",
+      "description": "Aria Card — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/card.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-checkbox",
+      "type": "registry:ui",
+      "title": "Aria Checkbox",
+      "description": "Aria Checkbox — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "lucide-react@^0.460.0",
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-collapsible",
+      "type": "registry:ui",
+      "title": "Aria Collapsible",
+      "description": "Aria Collapsible — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/collapsible.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-command",
+      "type": "registry:ui",
+      "title": "Aria Command",
+      "description": "Aria Command — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "lucide-react@^0.460.0",
+        "react-aria-components@^1.20.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-dialog.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-input-group.json"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria",
+        "registryDependencyNames": [
+          "aria-dialog",
+          "aria-input-group"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/command.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/command.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-dialog",
+      "type": "registry:ui",
+      "title": "Aria Dialog",
+      "description": "Aria Dialog — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "lucide-react@^0.460.0",
+        "react-aria-components@^1.20.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-button.json"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria",
+        "registryDependencyNames": [
+          "aria-button"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-dropdown-menu",
+      "type": "registry:ui",
+      "title": "Aria Dropdown Menu",
+      "description": "Aria Dropdown Menu — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "lucide-react@^0.460.0",
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-empty",
+      "type": "registry:ui",
+      "title": "Aria Empty",
+      "description": "Aria Empty — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/empty.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/empty.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-field",
+      "type": "registry:ui",
+      "title": "Aria Field",
+      "description": "Aria Field — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-label.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-separator.json"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria",
+        "registryDependencyNames": [
+          "aria-label",
+          "aria-separator"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/field.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-input",
+      "type": "registry:ui",
+      "title": "Aria Input",
+      "description": "Aria Input — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/input.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-input-group",
+      "type": "registry:ui",
+      "title": "Aria Input Group",
+      "description": "Aria Input Group — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "react-aria-components@^1.20.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-button.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-input.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-textarea.json"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria",
+        "registryDependencyNames": [
+          "aria-button",
+          "aria-input",
+          "aria-textarea"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/input-group.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/input-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-label",
+      "type": "registry:ui",
+      "title": "Aria Label",
+      "description": "Aria Label — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/label.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-popover",
+      "type": "registry:ui",
+      "title": "Aria Popover",
+      "description": "Aria Popover — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/popover.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-progress",
+      "type": "registry:ui",
+      "title": "Aria Progress",
+      "description": "Aria Progress — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/progress.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-scroll-area",
+      "type": "registry:ui",
+      "title": "Aria Scroll Area",
+      "description": "Aria Scroll Area — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/scroll-area.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-select",
+      "type": "registry:ui",
+      "title": "Aria Select",
+      "description": "Aria Select — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "lucide-react@^0.460.0",
+        "react-aria-components@^1.20.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-input-group.json"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria",
+        "registryDependencyNames": [
+          "aria-input-group"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/select.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-separator",
+      "type": "registry:ui",
+      "title": "Aria Separator",
+      "description": "Aria Separator — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/separator.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-sheet",
+      "type": "registry:ui",
+      "title": "Aria Sheet",
+      "description": "Aria Sheet — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "lucide-react@^0.460.0",
+        "react-aria-components@^1.20.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-button.json"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria",
+        "registryDependencyNames": [
+          "aria-button"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/sheet.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-sidebar",
+      "type": "registry:ui",
+      "title": "Aria Sidebar",
+      "description": "Aria Sidebar — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "lucide-react@^0.460.0",
+        "react-aria-components@^1.20.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-button.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-input.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-separator.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-sheet.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-skeleton.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-tooltip.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/use-mobile.json"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria",
+        "registryDependencyNames": [
+          "aria-button",
+          "aria-input",
+          "aria-separator",
+          "aria-sheet",
+          "aria-skeleton",
+          "aria-tooltip",
+          "use-mobile"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/sidebar.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-skeleton",
+      "type": "registry:ui",
+      "title": "Aria Skeleton",
+      "description": "Aria Skeleton — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-slider",
+      "type": "registry:ui",
+      "title": "Aria Slider",
+      "description": "Aria Slider — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/slider.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-sonner",
+      "type": "registry:ui",
+      "title": "Aria Sonner",
+      "description": "Aria Sonner — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "lucide-react@^0.460.0",
+        "next-themes@^0.4.6",
+        "sonner@^2.0.8"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/sonner.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/sonner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-spinner",
+      "type": "registry:ui",
+      "title": "Aria Spinner",
+      "description": "Aria Spinner — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "lucide-react@^0.460.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/spinner.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-switch",
+      "type": "registry:ui",
+      "title": "Aria Switch",
+      "description": "Aria Switch — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/switch.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-table",
+      "type": "registry:ui",
+      "title": "Aria Table",
+      "description": "Aria Table — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/table.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-tabs",
+      "type": "registry:ui",
+      "title": "Aria Tabs",
+      "description": "Aria Tabs — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/tabs.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-textarea",
+      "type": "registry:ui",
+      "title": "Aria Textarea",
+      "description": "Aria Textarea — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/textarea.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-toggle",
+      "type": "registry:ui",
+      "title": "Aria Toggle",
+      "description": "Aria Toggle — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/toggle.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/toggle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-toggle-group",
+      "type": "registry:ui",
+      "title": "Aria Toggle Group",
+      "description": "Aria Toggle Group — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "react-aria-components@^1.20.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-toggle.json"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria",
+        "registryDependencyNames": [
+          "aria-toggle"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/toggle-group.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/toggle-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aria-tooltip",
+      "type": "registry:ui",
+      "title": "Aria Tooltip",
+      "description": "Aria Tooltip — React Aria Components primitive from @workspace/ui (aria family).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "react-aria-components@^1.20.0"
+      ],
+      "categories": [
+        "ui",
+        "aria"
+      ],
+      "meta": {
+        "family": "aria",
+        "source": "packages/ui/src/components/aria"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/aria/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "@components/aria/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Avatar — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-avatar@^1.2.6"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/avatar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Badge — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bending-sidebar",
+      "type": "registry:component",
+      "title": "Bending Sidebar",
+      "description": "Stripe-style bending edge rail. SVG path bows outward toward the cursor. Click toggles sidebar collapse. Honors prefers-reduced-motion.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "lucide-react@^0.460.0",
+        "motion@^12.43.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-sidebar.json"
+      ],
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components",
+        "registryDependencyNames": [
+          "aria-sidebar"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/bending-sidebar.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/bending-sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Button — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-slot@^1.3.3",
+        "class-variance-authority@^0.7.1"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "Button Group — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-slot@^1.3.3",
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/separator.json"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui",
+        "registryDependencyNames": [
+          "separator"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/button-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Card — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card-skeleton",
+      "type": "registry:ui",
+      "title": "Card Skeleton",
+      "description": "Loading-skeleton presets composed over the base {@link Skeleton}. Centralised so every section's loading state reads identically instead of each page re-inventing an `animate-pulse` block inline.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/skeleton.json"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui",
+        "registryDependencyNames": [
+          "skeleton"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/card-skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@ui/card-skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Carousel — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "embla-carousel-react@^8.6.0",
+        "lucide-react@^0.460.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/button.json"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui",
+        "registryDependencyNames": [
+          "button"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/carousel.tsx",
+          "type": "registry:ui",
+          "target": "@ui/carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Chart — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "recharts@2.15.4"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/chart.tsx",
+          "type": "registry:ui",
+          "target": "@ui/chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "Collapsible — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-collapsible@^1.1.20"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "@ui/collapsible.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Command — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-dialog@^1.1.23",
+        "cmdk@^1.1.1",
+        "lucide-react@^0.460.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/dialog.json"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui",
+        "registryDependencyNames": [
+          "dialog"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/command.tsx",
+          "type": "registry:ui",
+          "target": "@ui/command.tsx"
+        }
+      ]
+    },
+    {
+      "name": "data-table-v2",
+      "type": "registry:component",
+      "title": "Data Table V2",
+      "description": "Barrel that re-exports the schema-driven data table from the `./data-table-v2/` directory so consumers can import everything from a single path.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@tanstack/react-table@^8.21.3",
+        "lucide-react@^0.460.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/badge.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/button.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/input.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/slider.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/table.json"
+      ],
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components",
+        "registryDependencyNames": [
+          "badge",
+          "button",
+          "input",
+          "slider",
+          "table"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/data-table-v2.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/data-table-v2.tsx"
+        },
+        {
+          "path": "packages/moneytrees-ui/src/components/data-table-v2/data-table-v2.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/data-table-v2/data-table-v2.tsx"
+        },
+        {
+          "path": "packages/moneytrees-ui/src/components/data-table-v2/builder.ts",
+          "type": "registry:component",
+          "target": "@components/moneytrees/data-table-v2/builder.ts"
+        },
+        {
+          "path": "packages/moneytrees-ui/src/components/data-table-v2/columns.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/data-table-v2/columns.tsx"
+        },
+        {
+          "path": "packages/moneytrees-ui/src/components/data-table-v2/index.ts",
+          "type": "registry:component",
+          "target": "@components/moneytrees/data-table-v2/index.ts"
+        },
+        {
+          "path": "packages/moneytrees-ui/src/components/data-table-v2/table-primitives.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/data-table-v2/table-primitives.tsx"
+        },
+        {
+          "path": "packages/moneytrees-ui/src/components/data-table-v2/types.ts",
+          "type": "registry:component",
+          "target": "@components/moneytrees/data-table-v2/types.ts"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Dialog — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-dialog@^1.1.23",
+        "lucide-react@^0.460.0"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Dropdown Menu — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu@^2.1.24",
+        "lucide-react@^0.460.0"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:ui",
+      "title": "Empty State",
+      "description": "Unified empty-state card. Replaces the repeated `rounded-lg border bg-card p-6 text-center` info blocks scattered across dashboards so \"nothing here yet\" reads consistently everywhere.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/empty-state.tsx",
+          "type": "registry:ui",
+          "target": "@ui/empty-state.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "Hover Card — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-hover-card@^1.1.23"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/hover-card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/hover-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Input — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Input Group — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/button.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/input.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/textarea.json"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui",
+        "registryDependencyNames": [
+          "button",
+          "input",
+          "textarea"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/input-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Label — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-label@^2.1.15",
+        "class-variance-authority@^0.7.1"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/label.tsx",
+          "type": "registry:ui",
+          "target": "@ui/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "liquid-surface",
+      "type": "registry:component",
+      "title": "Liquid Surface",
+      "description": "LiquidSurface — the bubbly liquid-glass primitive for moneytrees.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "motion@^12.43.0"
+      ],
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components"
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/liquid-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/liquid-surface.tsx"
+        }
+      ]
+    },
+    {
+      "name": "live-feed-table",
+      "type": "registry:component",
+      "title": "Live Feed Table",
+      "description": "Append-streaming live feed for the dashboard. Consumes the same `TableSchema<T>` as `<DataTableV2>` so column primitives (source badge, sentiment chip, ticker pills, etc.) are reused without duplication.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "motion@^12.43.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/data-table-v2.json"
+      ],
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components",
+        "registryDependencyNames": [
+          "data-table-v2"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/live-feed-table.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/live-feed-table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "moneytrees-logo",
+      "type": "registry:component",
+      "title": "Moneytrees Logo",
+      "description": "MoneytreesLogo — the animated palm-tree mark.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "motion@^12.43.0"
+      ],
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components"
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/logo/moneytrees-logo.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/logo/moneytrees-logo.tsx"
+        },
+        {
+          "path": "packages/moneytrees-ui/src/components/logo/lockup.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/logo/lockup.tsx"
+        },
+        {
+          "path": "packages/moneytrees-ui/src/components/logo/wordmark.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/logo/wordmark.tsx"
+        }
+      ]
+    },
+    {
+      "name": "moneytrees-theme",
+      "type": "registry:theme",
+      "title": "moneytrees theme",
+      "description": "The moneytrees liquid-glass finance theme: bull/bear/gold palette, bubble radii, glass + spring tokens, type roles. Opt in with <html data-theme=\"moneytrees\" class=\"dark\">.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "cssVars": {
+        "theme": {
+          "radius-bubble-sm": "14px",
+          "radius-bubble-md": "22px",
+          "radius-bubble-lg": "32px",
+          "radius-bubble-pill": "9999px",
+          "text-2xs": "0.625rem",
+          "font-sans": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+          "font-mono": "ui-monospace, \"SF Mono\", SFMono-Regular, Menlo, Consolas, monospace",
+          "tracking-eyebrow": "0.2em",
+          "spacing-page": "1.5rem",
+          "spacing-section": "1rem",
+          "spacing-card": "1rem",
+          "spacing-card-lg": "1.5rem",
+          "spacing-empty": "2rem"
+        }
+      },
+      "css": {
+        "@utility mt-type-title": {
+          "font-size": "var(--text-2xl)",
+          "line-height": "var(--text-2xl--line-height)",
+          "font-weight": "700"
+        },
+        "@utility mt-type-section": {
+          "font-size": "var(--text-lg)",
+          "line-height": "var(--text-lg--line-height)",
+          "font-weight": "600"
+        },
+        "@utility mt-type-card-title": {
+          "font-size": "var(--text-base)",
+          "line-height": "var(--text-base--line-height)",
+          "font-weight": "600"
+        },
+        "@utility mt-type-eyebrow": {
+          "font-size": "var(--text-2xs)",
+          "text-transform": "uppercase",
+          "letter-spacing": "var(--tracking-eyebrow)"
+        },
+        "@utility mt-type-numeric": {
+          "font-family": "var(--font-mono)",
+          "font-variant-numeric": "tabular-nums"
+        },
+        "[data-theme=\"moneytrees\"]": {
+          "--background": "hsl(220 6% 94%)",
+          "--foreground": "hsl(220 14% 12%)",
+          "--card": "hsl(220 6% 99%)",
+          "--card-foreground": "hsl(220 14% 12%)",
+          "--popover": "hsl(220 6% 99%)",
+          "--popover-foreground": "hsl(220 14% 12%)",
+          "--secondary": "hsl(220 6% 90%)",
+          "--secondary-foreground": "hsl(220 14% 12%)",
+          "--muted": "hsl(220 6% 88%)",
+          "--muted-foreground": "hsl(220 9% 38%)",
+          "--accent": "hsl(220 6% 90%)",
+          "--accent-foreground": "hsl(220 14% 12%)",
+          "--border": "hsl(220 6% 84%)",
+          "--input": "hsl(220 6% 84%)",
+          "--sidebar": "hsl(220 6% 92%)",
+          "--sidebar-foreground": "hsl(220 14% 18%)",
+          "--sidebar-primary": "hsl(43 96% 50%)",
+          "--sidebar-primary-foreground": "hsl(220 14% 12%)",
+          "--sidebar-accent": "hsl(220 6% 86%)",
+          "--sidebar-accent-foreground": "hsl(220 14% 12%)",
+          "--sidebar-border": "hsl(220 6% 80%)",
+          "--sidebar-ring": "hsl(43 96% 50%)",
+          "--color-bull": "hsl(142 71% 45%)",
+          "--color-bull-soft": "hsl(142 71% 45% / 0.12)",
+          "--color-bull-fg": "hsl(142 76% 46%)",
+          "--color-bull-foreground": "hsl(0 0% 100%)",
+          "--color-bear": "hsl(0 84% 60%)",
+          "--color-bear-soft": "hsl(0 84% 60% / 0.12)",
+          "--color-bear-fg": "hsl(0 82% 65%)",
+          "--color-bear-foreground": "hsl(0 0% 100%)",
+          "--color-gold": "hsl(43 96% 56%)",
+          "--color-gold-soft": "hsl(43 96% 56% / 0.15)",
+          "--color-gold-fg": "hsl(43 96% 42%)",
+          "--color-gold-foreground": "hsl(220 14% 12%)",
+          "--color-violet": "hsl(263 70% 60%)",
+          "--color-violet-soft": "hsl(263 70% 60% / 0.15)",
+          "--color-violet-fg": "hsl(263 70% 60%)",
+          "--color-cyan": "hsl(189 94% 55%)",
+          "--color-cyan-soft": "hsl(189 94% 55% / 0.15)",
+          "--color-cyan-fg": "hsl(189 94% 40%)",
+          "--color-silver": "hsl(220 9% 64%)",
+          "--color-bronze": "hsl(28 60% 45%)",
+          "--gradient-bull-from": "hsl(142 71% 45% / 0.4)",
+          "--gradient-bull-to": "hsl(142 71% 45% / 0)",
+          "--gradient-bear-from": "hsl(0 84% 60% / 0.4)",
+          "--gradient-bear-to": "hsl(0 84% 60% / 0)",
+          "--shadow-hot": "0 0 0 1px hsl(43 96% 56% / 0.4), 0 0 24px hsl(43 96% 56% / 0.25)",
+          "--shadow-bull": "0 0 0 1px hsl(142 71% 45% / 0.3)",
+          "--shadow-bear": "0 0 0 1px hsl(0 84% 60% / 0.3)",
+          "--sidebar-width-mt": "17rem",
+          "--sidebar-width-icon-mt": "3.25rem",
+          "--chrome-header-h": "3.5rem",
+          "--z-header": "20",
+          "--z-sidebar": "30",
+          "--z-rail": "40",
+          "--z-overlay": "50",
+          "--radius-bubble-sm": "14px",
+          "--radius-bubble-md": "22px",
+          "--radius-bubble-lg": "32px",
+          "--radius-bubble-pill": "9999px",
+          "--glass-tint-card": "hsl(220 14% 96% / 0.55)",
+          "--glass-tint-nav": "hsl(220 14% 98% / 0.65)",
+          "--glass-tint-modal": "hsl(220 14% 98% / 0.75)",
+          "--glass-edge": "hsl(0 0% 100% / 0.35)",
+          "--glass-blur": "20px",
+          "--glass-saturate": "140%",
+          "--shadow-bubble-rest": "0 1px 2px hsl(220 14% 4% / 0.04), 0 8px 24px hsl(220 14% 4% / 0.08), inset 0 1px 0 hsl(0 0% 100% / 0.4)",
+          "--shadow-bubble-hover": "0 2px 4px hsl(220 14% 4% / 0.06), 0 16px 40px hsl(220 14% 4% / 0.12), inset 0 1px 0 hsl(0 0% 100% / 0.5)",
+          "--shadow-bubble-press": "0 1px 1px hsl(220 14% 4% / 0.08), 0 4px 12px hsl(220 14% 4% / 0.1), inset 0 1px 2px hsl(220 14% 4% / 0.06)",
+          "--spring-bouncy": "'{\"type\":\"spring\",\"stiffness\":520,\"damping\":18,\"mass\":0.6}'",
+          "--spring-gentle": "'{\"type\":\"spring\",\"stiffness\":260,\"damping\":28}'",
+          "--spring-snappy": "'{\"type\":\"spring\",\"stiffness\":420,\"damping\":34}'",
+          "--chart-1": "var(--color-bull)",
+          "--chart-2": "var(--color-bear)",
+          "--chart-3": "var(--color-gold)",
+          "--chart-4": "var(--color-violet)",
+          "--chart-5": "var(--color-cyan)"
+        },
+        "[data-theme=\"moneytrees\"].dark": {
+          "--background": "hsl(220 7% 13%)",
+          "--foreground": "hsl(0 0% 96%)",
+          "--card": "hsl(220 7% 16%)",
+          "--card-foreground": "hsl(0 0% 96%)",
+          "--popover": "hsl(220 7% 16%)",
+          "--popover-foreground": "hsl(0 0% 96%)",
+          "--primary": "hsl(43 96% 56%)",
+          "--primary-foreground": "hsl(220 7% 13%)",
+          "--secondary": "hsl(220 7% 18%)",
+          "--secondary-foreground": "hsl(0 0% 96%)",
+          "--muted": "hsl(220 7% 18%)",
+          "--muted-foreground": "hsl(220 9% 68%)",
+          "--accent": "hsl(220 7% 21%)",
+          "--accent-foreground": "hsl(0 0% 96%)",
+          "--border": "hsl(220 7% 22%)",
+          "--input": "hsl(220 7% 22%)",
+          "--ring": "hsl(43 96% 56%)",
+          "--sidebar": "hsl(220 7% 15% / 0.45)",
+          "--sidebar-foreground": "hsl(0 0% 96%)",
+          "--sidebar-primary": "hsl(43 96% 56%)",
+          "--sidebar-primary-foreground": "hsl(220 7% 13%)",
+          "--sidebar-accent": "hsl(43 96% 60% / 0.18)",
+          "--sidebar-accent-foreground": "hsl(0 0% 98%)",
+          "--sidebar-border": "hsl(0 0% 100% / 0.08)",
+          "--sidebar-ring": "hsl(43 96% 56%)",
+          "--color-gold-fg": "hsl(43 96% 62%)",
+          "--color-cyan-fg": "hsl(189 94% 62%)",
+          "--color-silver": "hsl(220 9% 72%)",
+          "--color-bronze": "hsl(28 65% 58%)",
+          "--glass-tint-card": "hsl(220 7% 20% / 0.38)",
+          "--glass-tint-nav": "hsl(220 7% 15% / 0.42)",
+          "--glass-tint-modal": "hsl(220 7% 18% / 0.55)",
+          "--glass-edge": "hsl(0 0% 100% / 0.12)",
+          "--glass-blur": "28px",
+          "--glass-saturate": "180%",
+          "--shadow-bubble-rest": "0 1px 1px hsl(0 0% 0% / 0.25), 0 8px 28px hsl(0 0% 0% / 0.4), inset 0 1px 0 hsl(0 0% 100% / 0.12), inset 0 -1px 0 hsl(0 0% 0% / 0.2)",
+          "--shadow-bubble-hover": "0 2px 3px hsl(0 0% 0% / 0.3), 0 16px 40px hsl(0 0% 0% / 0.5), inset 0 1px 0 hsl(0 0% 100% / 0.18), inset 0 -1px 0 hsl(0 0% 0% / 0.25)",
+          "--shadow-bubble-press": "0 1px 1px hsl(0 0% 0% / 0.4), 0 4px 12px hsl(0 0% 0% / 0.45), inset 0 1px 2px hsl(0 0% 0% / 0.3)"
+        },
+        "@keyframes mt-new-row": {
+          "0%": {
+            "background-color": "hsl(43 96% 56% / 0.18)"
+          },
+          "100%": {
+            "background-color": "transparent"
+          }
+        },
+        ".mt-new-row": {
+          "animation": "mt-new-row 1.2s ease-out forwards"
+        },
+        "@media (prefers-reduced-motion: reduce)": {
+          ".mt-new-row": {
+            "animation": "none"
+          },
+          ".mt-price-up, .mt-price-down": {
+            "animation": "none"
+          }
+        },
+        "@keyframes mt-price-up": {
+          "0%": {
+            "background-color": "var(--color-bull-soft)"
+          },
+          "100%": {
+            "background-color": "transparent"
+          }
+        },
+        "@keyframes mt-price-down": {
+          "0%": {
+            "background-color": "var(--color-bear-soft)"
+          },
+          "100%": {
+            "background-color": "transparent"
+          }
+        },
+        ".mt-price-up": {
+          "animation": "mt-price-up 1.2s ease-out forwards",
+          "border-radius": "4px"
+        },
+        ".mt-price-down": {
+          "animation": "mt-price-down 1.2s ease-out forwards",
+          "border-radius": "4px"
+        },
+        "[data-theme=\"moneytrees\"] .mt-hot": {
+          "box-shadow": "var(--shadow-hot)"
+        },
+        "[data-theme=\"moneytrees\"] .driver-popover": {
+          "background-color": "hsl(220 14% 6%)",
+          "color": "hsl(0 0% 98%)",
+          "border": "1px solid hsl(220 14% 12%)"
+        },
+        "[data-theme=\"moneytrees\"] .driver-popover-title, [data-theme=\"moneytrees\"] .driver-popover-description": {
+          "color": "hsl(0 0% 98%)"
+        },
+        "[data-theme=\"moneytrees\"] .driver-popover-arrow-side-top": {
+          "border-top-color": "hsl(220 14% 6%)"
+        },
+        "[data-theme=\"moneytrees\"] .driver-popover-arrow-side-bottom": {
+          "border-bottom-color": "hsl(220 14% 6%)"
+        },
+        "[data-theme=\"moneytrees\"] .driver-popover-arrow-side-left": {
+          "border-left-color": "hsl(220 14% 6%)"
+        },
+        "[data-theme=\"moneytrees\"] .driver-popover-arrow-side-right": {
+          "border-right-color": "hsl(220 14% 6%)"
+        },
+        "[data-theme=\"moneytrees\"] .mt-liquid-css": {
+          "background-color": "var(--glass-tint-card)",
+          "-webkit-backdrop-filter": "blur(var(--glass-blur)) saturate(var(--glass-saturate))",
+          "backdrop-filter": "blur(var(--glass-blur)) saturate(var(--glass-saturate))",
+          "border": "1px solid var(--glass-edge)",
+          "box-shadow": "var(--shadow-bubble-rest)",
+          "transition": "box-shadow 240ms ease, transform 200ms ease"
+        },
+        "[data-theme=\"moneytrees\"] .mt-liquid-css[data-variant=\"nav\"]": {
+          "background-color": "var(--glass-tint-nav)",
+          "box-shadow": "12px 0 44px -18px hsl(0 0% 0% / 0.55)"
+        },
+        "[data-theme=\"moneytrees\"] .mt-liquid-css[data-variant=\"modal\"]": {
+          "background-color": "var(--glass-tint-modal)"
+        },
+        "[data-theme=\"moneytrees\"] .mt-liquid-css:hover": {
+          "box-shadow": "var(--shadow-bubble-hover)"
+        },
+        "[data-theme=\"moneytrees\"] .mt-liquid-css:active": {
+          "box-shadow": "var(--shadow-bubble-press)"
+        },
+        "[data-theme=\"moneytrees\"].dark body": {
+          "background-color": "var(--color-background)",
+          "background-image": "radial-gradient(at 18% 22%, hsl(263 70% 60% / 0.28) 0px, transparent 55%), radial-gradient(at 82% 12%, hsl(189 94% 55% / 0.22) 0px, transparent 55%), radial-gradient(at 50% 90%, hsl(43 96% 56% / 0.18) 0px, transparent 60%), radial-gradient(at 78% 55%, hsl(263 70% 60% / 0.16) 0px, transparent 55%), radial-gradient(at 12% 70%, hsl(189 94% 55% / 0.12) 0px, transparent 55%)",
+          "background-attachment": "fixed"
+        },
+        "[data-theme=\"moneytrees\"]:not(.dark) body": {
+          "background-color": "var(--color-background)",
+          "background-image": "radial-gradient(at 18% 22%, hsl(263 70% 70% / 0.22) 0px, transparent 55%), radial-gradient(at 82% 12%, hsl(189 94% 65% / 0.18) 0px, transparent 55%), radial-gradient(at 50% 90%, hsl(43 96% 65% / 0.18) 0px, transparent 60%)",
+          "background-attachment": "fixed"
+        },
+        "[data-theme=\"moneytrees\"] [data-slot=\"tooltip-content\"], [data-theme=\"moneytrees\"] [role=\"tooltip\"], [data-theme=\"moneytrees\"] [data-radix-popper-content-wrapper] > *": {
+          "background-color": "var(--glass-tint-modal) !important",
+          "-webkit-backdrop-filter": "blur(var(--glass-blur)) saturate(var(--glass-saturate))",
+          "backdrop-filter": "blur(var(--glass-blur)) saturate(var(--glass-saturate))",
+          "border": "1px solid var(--glass-edge) !important",
+          "box-shadow": "var(--shadow-bubble-rest)",
+          "color": "var(--color-foreground)"
+        }
+      },
+      "categories": [
+        "theme",
+        "moneytrees"
+      ],
+      "docs": "Merged into your Tailwind v4 CSS entry (cssVars → :root/.dark/@theme inline, css → appended rules). Source: packages/moneytrees-ui/src/styles/moneytrees.css.",
+      "meta": {
+        "family": "theme",
+        "source": "packages/moneytrees-ui/src/styles/moneytrees.css"
+      }
+    },
+    {
+      "name": "moneytrees-ui",
+      "type": "registry:item",
+      "title": "moneytrees UI (everything)",
+      "description": "Every moneytrees component plus the moneytrees theme, in one install.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/agent-card.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/bending-sidebar.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/data-table-v2.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/liquid-surface.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/live-feed-table.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/moneytrees-logo.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/moneytrees-theme.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/onboarding-tour.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/pnl-badge.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/sentiment-meter.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/theme-provider.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/ticker-card.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/ticker-chart.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/usage-meter.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "bundle"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "registryDependencyNames": [
+          "agent-card",
+          "bending-sidebar",
+          "data-table-v2",
+          "liquid-surface",
+          "live-feed-table",
+          "moneytrees-logo",
+          "moneytrees-theme",
+          "onboarding-tour",
+          "pnl-badge",
+          "sentiment-meter",
+          "theme-provider",
+          "ticker-card",
+          "ticker-chart",
+          "usage-meter"
+        ]
+      }
+    },
+    {
+      "name": "onboarding-tour",
+      "type": "registry:component",
+      "title": "Onboarding Tour",
+      "description": "Wraps driver.js. Lazy-imported so it only loads when the tour actually runs.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "driver.js@^1.8.0"
+      ],
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components"
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/onboarding-tour.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/onboarding-tour.tsx"
+        }
+      ]
+    },
+    {
+      "name": "paper-design",
+      "type": "registry:item",
+      "title": "paper-design",
+      "description": "Design in Paper Desktop (paper.design, the \"paper\" design MCP) under its weekly MCP call quota — code-to-design seeds, design-system boards, screen mockups, state variants, design-to-code reads. Use whenever the user mentions Paper, paper.design, the paper MCP, seeding a design system, or asks to mock up / diagram screens in Paper. Also use when the `paper` MCP tools are missing from the session (ships an HTTP bridge).",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "categories": [
+        "agent-skill"
+      ],
+      "docs": "Installed to .claude/skills/paper-design/ (project-scoped). For a user-global copy run: npx skills add CesarBenavides777/cesar-skills --skill paper-design -g",
+      "meta": {
+        "family": "skill",
+        "source": "plugins/paper-design/skills/paper-design",
+        "skill": true
+      },
+      "files": [
+        {
+          "path": "plugins/paper-design/skills/paper-design/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/paper-design/SKILL.md"
+        },
+        {
+          "path": "plugins/paper-design/skills/paper-design/scripts/mcp.py",
+          "type": "registry:file",
+          "target": "~/.claude/skills/paper-design/scripts/mcp.py"
+        },
+        {
+          "path": "plugins/paper-design/skills/paper-design/scripts/p.py",
+          "type": "registry:file",
+          "target": "~/.claude/skills/paper-design/scripts/p.py"
+        }
+      ]
+    },
+    {
+      "name": "pnl-badge",
+      "type": "registry:component",
+      "title": "Pnl Badge",
+      "description": "Pnl Badge — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "lucide-react@^0.460.0"
+      ],
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components"
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/pnl-badge.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/pnl-badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Popover — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-popover@^1.1.23"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/popover.tsx",
+          "type": "registry:ui",
+          "target": "@ui/popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Progress — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-progress@^1.1.16"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/progress.tsx",
+          "type": "registry:ui",
+          "target": "@ui/progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Scroll Area — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-scroll-area@^1.2.18"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "@ui/scroll-area.tsx"
+        }
+      ]
+    },
+    {
+      "name": "section-error",
+      "type": "registry:ui",
+      "title": "Section Error",
+      "description": "Unified destructive section-error card with an optional retry affordance. Replaces the repeated `border-destructive/… bg-destructive/…` blocks so failure states read consistently and can offer a one-click retry.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/section-error.tsx",
+          "type": "registry:ui",
+          "target": "@ui/section-error.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Select — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-select@^2.3.7",
+        "lucide-react@^0.460.0"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sentiment-meter",
+      "type": "registry:component",
+      "title": "Sentiment Meter",
+      "description": "Sentiment Meter — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "motion@^12.43.0"
+      ],
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components"
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/sentiment-meter.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/sentiment-meter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Separator — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-separator@^1.1.15"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/separator.tsx",
+          "type": "registry:ui",
+          "target": "@ui/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Sheet — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-dialog@^1.1.23",
+        "class-variance-authority@^0.7.1",
+        "lucide-react@^0.460.0"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/sheet.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Sidebar — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-slot@^1.3.3",
+        "class-variance-authority@^0.7.1",
+        "lucide-react@^0.460.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/button.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/input.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/separator.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/sheet.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/skeleton.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/tooltip.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/use-mobile.json"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui",
+        "registryDependencyNames": [
+          "button",
+          "input",
+          "separator",
+          "sheet",
+          "skeleton",
+          "tooltip",
+          "use-mobile"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/sidebar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Skeleton — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@ui/skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Slider — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-slider@^1.4.7"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/slider.tsx",
+          "type": "registry:ui",
+          "target": "@ui/slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Sonner",
+      "description": "Sonner — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "lucide-react@^0.460.0",
+        "next-themes@^0.4.6",
+        "sonner@^2.0.8"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/sonner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sonner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "Spinner — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "lucide-react@^0.460.0"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/spinner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Switch — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-switch@^1.3.7"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Table — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/table.tsx",
+          "type": "registry:ui",
+          "target": "@ui/table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Tabs — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-tabs@^1.1.21"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Textarea — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/textarea.tsx",
+          "type": "registry:ui",
+          "target": "@ui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "Cesar UI theme",
+      "description": "The @workspace/ui design tokens (shadcn palette, sidebar tokens, marquee + prose helpers) as cssVars and css, merged into your globals.css.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "cssVars": {
+        "theme": {
+          "color-background": "var(--background)",
+          "color-foreground": "var(--foreground)",
+          "color-card": "var(--card)",
+          "color-card-foreground": "var(--card-foreground)",
+          "color-popover": "var(--popover)",
+          "color-popover-foreground": "var(--popover-foreground)",
+          "color-primary": "var(--primary)",
+          "color-primary-foreground": "var(--primary-foreground)",
+          "color-secondary": "var(--secondary)",
+          "color-secondary-foreground": "var(--secondary-foreground)",
+          "color-muted": "var(--muted)",
+          "color-muted-foreground": "var(--muted-foreground)",
+          "color-accent": "var(--accent)",
+          "color-accent-foreground": "var(--accent-foreground)",
+          "color-destructive": "var(--destructive)",
+          "color-destructive-foreground": "var(--destructive-foreground)",
+          "color-border": "var(--border)",
+          "color-input": "var(--input)",
+          "color-ring": "var(--ring)",
+          "color-chart-1": "var(--chart-1)",
+          "color-chart-2": "var(--chart-2)",
+          "color-chart-3": "var(--chart-3)",
+          "color-chart-4": "var(--chart-4)",
+          "color-chart-5": "var(--chart-5)",
+          "color-sidebar": "var(--sidebar)",
+          "color-sidebar-foreground": "var(--sidebar-foreground)",
+          "color-sidebar-primary": "var(--sidebar-primary)",
+          "color-sidebar-primary-foreground": "var(--sidebar-primary-foreground)",
+          "color-sidebar-accent": "var(--sidebar-accent)",
+          "color-sidebar-accent-foreground": "var(--sidebar-accent-foreground)",
+          "color-sidebar-border": "var(--sidebar-border)",
+          "color-sidebar-ring": "var(--sidebar-ring)",
+          "radius": "0.625rem",
+          "font-sans": "var(--font-geist-sans)",
+          "font-mono": "var(--font-geist-mono)"
+        },
+        "light": {
+          "background": "hsl(0 0% 100%)",
+          "foreground": "hsl(0 0% 3.9%)",
+          "card": "hsl(0 0% 100%)",
+          "card-foreground": "hsl(0 0% 3.9%)",
+          "popover": "hsl(0 0% 100%)",
+          "popover-foreground": "hsl(0 0% 3.9%)",
+          "primary": "hsl(0 0% 9%)",
+          "primary-foreground": "hsl(0 0% 98%)",
+          "secondary": "hsl(0 0% 96.1%)",
+          "secondary-foreground": "hsl(0 0% 9%)",
+          "muted": "hsl(0 0% 96.1%)",
+          "muted-foreground": "hsl(0 0% 45.1%)",
+          "accent": "hsl(0 0% 96.1%)",
+          "accent-foreground": "hsl(0 0% 9%)",
+          "destructive": "hsl(0 84.2% 60.2%)",
+          "destructive-foreground": "hsl(0 0% 98%)",
+          "border": "hsl(0 0% 89.8%)",
+          "input": "hsl(0 0% 89.8%)",
+          "ring": "hsl(0 0% 3.9%)",
+          "chart-1": "hsl(12 76% 61%)",
+          "chart-2": "hsl(173 58% 39%)",
+          "chart-3": "hsl(197 37% 24%)",
+          "chart-4": "hsl(43 74% 66%)",
+          "chart-5": "hsl(27 87% 67%)",
+          "sidebar": "hsl(0 0% 98%)",
+          "sidebar-foreground": "hsl(0 0% 26.1%)",
+          "sidebar-primary": "hsl(0 0% 9%)",
+          "sidebar-primary-foreground": "hsl(0 0% 98%)",
+          "sidebar-accent": "hsl(0 0% 96.1%)",
+          "sidebar-accent-foreground": "hsl(0 0% 9%)",
+          "sidebar-border": "hsl(0 0% 91%)",
+          "sidebar-ring": "hsl(0 0% 3.9%)"
+        },
+        "dark": {
+          "background": "hsl(0 0% 3.9%)",
+          "foreground": "hsl(0 0% 98%)",
+          "card": "hsl(0 0% 3.9%)",
+          "card-foreground": "hsl(0 0% 98%)",
+          "popover": "hsl(0 0% 3.9%)",
+          "popover-foreground": "hsl(0 0% 98%)",
+          "primary": "hsl(0 0% 98%)",
+          "primary-foreground": "hsl(0 0% 9%)",
+          "secondary": "hsl(0 0% 14.9%)",
+          "secondary-foreground": "hsl(0 0% 98%)",
+          "muted": "hsl(0 0% 14.9%)",
+          "muted-foreground": "hsl(0 0% 63.9%)",
+          "accent": "hsl(0 0% 14.9%)",
+          "accent-foreground": "hsl(0 0% 98%)",
+          "destructive": "hsl(0 62.8% 30.6%)",
+          "destructive-foreground": "hsl(0 0% 98%)",
+          "border": "hsl(0 0% 14.9%)",
+          "input": "hsl(0 0% 14.9%)",
+          "ring": "hsl(0 0% 83.1%)",
+          "chart-1": "hsl(220 70% 50%)",
+          "chart-2": "hsl(160 60% 45%)",
+          "chart-3": "hsl(30 80% 55%)",
+          "chart-4": "hsl(280 65% 60%)",
+          "chart-5": "hsl(340 75% 55%)",
+          "sidebar": "hsl(0 0% 9%)",
+          "sidebar-foreground": "hsl(0 0% 96.1%)",
+          "sidebar-primary": "hsl(0 0% 98%)",
+          "sidebar-primary-foreground": "hsl(0 0% 9%)",
+          "sidebar-accent": "hsl(0 0% 14.9%)",
+          "sidebar-accent-foreground": "hsl(0 0% 96.1%)",
+          "sidebar-border": "hsl(0 0% 14.9%)",
+          "sidebar-ring": "hsl(0 0% 83.1%)"
+        }
+      },
+      "css": {
+        "@layer base": {
+          "*": {
+            "@apply border-border": {}
+          },
+          "body": {
+            "@apply bg-background text-foreground": {}
+          }
+        },
+        "body": {
+          "@apply dark:bg-[#242424] bg-[#f9f9f9]": {}
+        },
+        ".content-wrapper p": {
+          "@apply text-base leading-relaxed mb-4": {}
+        },
+        ".content-wrapper a": {
+          "@apply underline underline-offset-4 hover:text-primary": {}
+        },
+        ".content-wrapper ul": {
+          "@apply list-disc pl-6 mb-4": {}
+        },
+        ".content-wrapper ol": {
+          "@apply list-decimal pl-6 mb-4": {}
+        },
+        ".content-wrapper li": {
+          "@apply mb-1": {}
+        },
+        ".content-wrapper ul ul, .content-wrapper ol ol, .content-wrapper ul ol, .content-wrapper ol ul": {
+          "@apply mb-0 mt-1": {}
+        },
+        "@keyframes marquee": {
+          "from": {
+            "transform": "translateX(0)"
+          },
+          "to": {
+            "transform": "translateX(calc(-100% - var(--gap, 1rem)))"
+          }
+        },
+        "@keyframes marquee-reverse": {
+          "from": {
+            "transform": "translateX(calc(-100% - var(--gap, 1rem)))"
+          },
+          "to": {
+            "transform": "translateX(0)"
+          }
+        },
+        ".animate-marquee": {
+          "animation": "marquee var(--duration, 30s) linear infinite"
+        },
+        ".animate-marquee-reverse": {
+          "animation": "marquee-reverse var(--duration, 30s) linear infinite"
+        },
+        ".balanced": {
+          "text-wrap": "balance"
+        },
+        ".linenumber": {
+          "color": "rgba(135, 134, 144)"
+        },
+        "[data-rehype-pretty-code-figure]": {
+          "@apply my-4": {}
+        },
+        "[data-rehype-pretty-code-figure] pre": {
+          "@apply rounded-lg p-4 overflow-x-auto text-sm leading-relaxed": {}
+        },
+        "[data-rehype-pretty-code-figure] code": {
+          "@apply text-sm": {},
+          "counter-reset": "line"
+        },
+        "[data-rehype-pretty-code-figure] [data-line]": {
+          "@apply px-4 border-l-2 border-transparent": {}
+        },
+        "[data-rehype-pretty-code-figure] [data-highlighted-line]": {
+          "@apply bg-white/10 border-l-2 border-white/40": {}
+        },
+        "[data-rehype-pretty-code-title]": {
+          "@apply text-xs font-mono text-muted-foreground bg-[#1e1e1e] rounded-t-lg px-4 py-2 border-b border-white/10": {}
+        },
+        ":not(pre) > code": {
+          "@apply bg-muted/80 text-primary px-1.5 py-0.5 rounded-md text-[0.85em] font-mono font-medium border border-border/50": {}
+        },
+        ".rfm-overlay::before, .rfm-overlay::after": {
+          "background": "linear-gradient(to right, hsl(0 0% 100%), transparent) !important"
+        },
+        ".dark .rfm-overlay::before, .dark .rfm-overlay::after": {
+          "background": "linear-gradient(to right, hsl(0 0% 3.9%), transparent) !important"
+        },
+        ".rfm-overlay::after": {
+          "background": "linear-gradient(to left, hsl(0 0% 100%), transparent) !important"
+        },
+        ".dark .rfm-overlay::after": {
+          "background": "linear-gradient(to left, hsl(0 0% 3.9%), transparent) !important"
+        }
+      },
+      "categories": [
+        "theme"
+      ],
+      "docs": "Merged into your Tailwind v4 CSS entry (cssVars → :root/.dark/@theme inline, css → appended rules). Source: packages/ui/src/styles/globals.css.",
+      "meta": {
+        "family": "theme",
+        "source": "packages/ui/src/styles/globals.css"
+      }
+    },
+    {
+      "name": "theme-provider",
+      "type": "registry:component",
+      "title": "Theme Provider",
+      "description": "Theme Provider — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components"
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/theme-provider.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/theme-provider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ticker-card",
+      "type": "registry:component",
+      "title": "Ticker Card",
+      "description": "Bubbly ticker card. Wraps content in a `LiquidSurface` so the surface inherits the active rendering tier (native canvas, polyfilled, or CSS). The `hot` flag adds the gold glow shadow on top of the bubble shadow stack.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/liquid-surface.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/pnl-badge.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/ticker-chart.json"
+      ],
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components",
+        "registryDependencyNames": [
+          "liquid-surface",
+          "pnl-badge",
+          "ticker-chart"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/ticker-card.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/ticker-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ticker-chart",
+      "type": "registry:component",
+      "title": "Ticker Chart",
+      "description": "Ticker Chart — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "recharts@2.15.4"
+      ],
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components"
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/ticker-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/ticker-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Tooltip — shadcn-style primitive (Radix + Tailwind v4) from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "@radix-ui/react-tooltip@^1.2.16"
+      ],
+      "categories": [
+        "ui"
+      ],
+      "meta": {
+        "family": "ui",
+        "source": "packages/ui/src/components/ui"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/components/ui/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "usage-meter",
+      "type": "registry:component",
+      "title": "Usage Meter",
+      "description": "Usage Meter — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "motion@^12.43.0"
+      ],
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components"
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/usage-meter.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/usage-meter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "title": "Use Mobile",
+      "description": "Use Mobile — shared helper from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "categories": [
+        "hooks"
+      ],
+      "meta": {
+        "family": "shared",
+        "source": "packages/ui/src/hooks"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/hooks/use-mobile.tsx",
+          "type": "registry:hook",
+          "target": "@hooks/use-mobile.tsx"
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utils",
+      "description": "Utils — shared helper from @workspace/ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "clsx@^2.1.1",
+        "tailwind-merge@^3.6.0"
+      ],
+      "categories": [
+        "lib"
+      ],
+      "meta": {
+        "family": "shared",
+        "source": "packages/ui/src/lib"
+      },
+      "files": [
+        {
+          "path": "packages/ui/src/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    }
+  ]
+}
