@@ -1,10 +1,10 @@
 {
-  "name": "cesar-ai",
-  "displayName": "Cesar-AI",
-  "description": "Claude Code plugins by Cesar Benavides: design tooling and workflow skills.",
+  "name": "cesar-skills",
+  "displayName": "Cesar Skills",
+  "description": "Cesar Skills — Claude Code plugins, agent skills and a shadcn registry by Cesar Benavides.",
   "owner": {
     "name": "Cesar Benavides",
-    "url": "https://github.com/CesarBenavides777/claude-plugins"
+    "url": "https://github.com/CesarBenavides777/cesar-skills"
   },
   "plugins": [
     {

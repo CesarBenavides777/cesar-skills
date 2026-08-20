@@ -1,14 +1,14 @@
-# claude-plugins
+# Cesar Skills
 
 Claude Code plugins by [Cesar Benavides](https://github.com/CesarBenavides777), published
-as the **`cesar-ai`** marketplace. This repo is a generated mirror of `plugins/` in the
+as the **`cesar-skills`** marketplace. This repo is a generated mirror of `plugins/` in the
 Cesar-AI monorepo — open issues here, but changes land upstream and sync on merge.
 
 ## Install
 
 ```
-/plugin marketplace add CesarBenavides777/claude-plugins
-/plugin install paper-design@cesar-ai
+/plugin marketplace add CesarBenavides777/cesar-skills
+/plugin install paper-design@cesar-skills
 ```
 
 ## Plugins

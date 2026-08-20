@@ -12,8 +12,8 @@ MCP tools never registered because the app wasn't running at startup.
 ## Install
 
 ```
-/plugin marketplace add CesarBenavides777/claude-plugins
-/plugin install paper-design@cesar-ai
+/plugin marketplace add CesarBenavides777/cesar-skills
+/plugin install paper-design@cesar-skills
 ```
 
 Then just ask: "seed our design system into Paper", "mock up the settings page in Paper",

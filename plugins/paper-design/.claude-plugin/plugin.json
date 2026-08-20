@@ -5,9 +5,9 @@
   "description": "Design in Paper Desktop (paper.design) under its weekly MCP call quota: batched code-to-design seeds, design-system boards, screen mockups and state variants, plus an HTTP bridge for when the paper MCP tools aren't registered in the session.",
   "author": {
     "name": "Cesar Benavides",
-    "url": "https://github.com/CesarBenavides777/claude-plugins"
+    "url": "https://github.com/CesarBenavides777/cesar-skills"
   },
-  "repository": "https://github.com/CesarBenavides777/claude-plugins",
+  "repository": "https://github.com/CesarBenavides777/cesar-skills",
   "license": "MIT",
   "keywords": [
     "paper",
@@ -19,5 +19,5 @@
     "design-to-code",
     "tokens"
   ],
-  "homepage": "https://github.com/CesarBenavides777/claude-plugins"
+  "homepage": "https://github.com/CesarBenavides777/cesar-skills"
 }
