@@ -40,7 +40,28 @@ for how to execute without burning the quota.
    `replace` mode gives the node a **new id** — capture it from the result.
 6. **Draft off-canvas.** Compose the HTML locally (f-strings / a scratch file), eyeball
    it in a browser if unsure, push only the final markup. Local is free; Paper isn't.
-7. **State the budget before starting** ("~40 calls: 3 screens × ~12 + 4 screenshots")
+7. **Name every layer at write time.** Put `layer-name="…"` on every element you write
+   (containers *and* leaves); Paper otherwise names everything "Frame", which makes the
+   layer tree useless to a designer. It costs zero extra calls — `rename_nodes` after the
+   fact does. Convention (kind · specifics, ≤ 50 chars):
+   artboards `Foundations` / `Components` / `Screen · Dashboard · default|loading|empty|error|locked`;
+   `Header`, `Section · Color`, `Row · Accent quartets`, `Panel · Backdrop mesh`,
+   `Swatch · gold`, `Tile · radius bubble-md`, `Glass · card`, `Nav · Markets (active)`,
+   `TickerCard · $PEPE (hot)`, `AgentCard · Momentum Scalper`, `PnLBadge · bull md`,
+   `Table · Live feed`, `Row · $PEPE`, `Cell · price`, `Label · eyebrow`, `Icon · search`,
+   `Chart · sparkline bull`. Text nodes take their content as name automatically — leave
+   those. Name the state on state boards (`Skeleton · ticker grid`, `Empty · no agents`).
+8. **Atomic structure — for every component.** Organize the canvas as
+   `00 · Foundations` (tokens) → `01 · Atoms` (brand marks, badges, chips, icons, meters,
+   inputs, buttons) → `02 · Molecules` (cards, nav items, search pills, stat tiles) →
+   `03 · Organisms` (sidebar, header, tables, grids, sheets) → `Screen · …` boards.
+   Every reusable bit is drawn **once**, on the lowest board it belongs to, as its own
+   named node; anything larger is **composed by clone** (`<x-paper-clone node-id="…">`)
+   rather than redrawn — so a badge fix on Atoms is the fix everywhere, and the layer
+   tree of a screen reads as its component tree. Keep a local `ids` map (name → node id)
+   so clones never need a tree lookup. Reorganize with `move_nodes` (ids survive), never
+   delete + rewrite.
+9. **State the budget before starting** ("~40 calls: 3 screens × ~12 + 4 screenshots")
    and check Paper's usage meter before a long session.
 
 ## Connecting
@@ -86,6 +107,8 @@ boards are buildable, not invented. Reuse a shared sidebar/header via
 `<x-paper-clone node-id="…">` to save calls.
 
 ## Gotchas (verified against paper-desktop 0.5.4)
+
+- `layer-name` is the only naming hook in `write_html`; `id`/`title`/`aria-label` do nothing for the tree.
 
 - `get_tree_summary` returns JSON; `json.loads(t)["summary"]` then regex.
 - `backdrop-filter` blur, inline SVG with `var(--token)` fill/stroke, `radial-gradient`
