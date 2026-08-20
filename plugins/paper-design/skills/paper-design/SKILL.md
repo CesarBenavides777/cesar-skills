@@ -61,7 +61,15 @@ for how to execute without burning the quota.
    tree of a screen reads as its component tree. Keep a local `ids` map (name → node id)
    so clones never need a tree lookup. Reorganize with `move_nodes` (ids survive), never
    delete + rewrite.
-9. **State the budget before starting** ("~40 calls: 3 screens × ~12 + 4 screenshots")
+9. **Lay the canvas out as a grid, never a line.** `create_artboard` ignores `left`/`top`
+   (Paper auto-places every new board in "the best empty spot" → a long single row).
+   Collect every board id while building, then position ALL of them in **one**
+   `update_styles` call at the end: system boards in a row on top
+   (`00 · Foundations → 01 · Atoms → 02 · Molecules → 03 · Organisms`), screens below as a
+   grid — **one column per route/flow, one row per state** (default, loading, empty, locked,
+   error, dialogs), 120px gutters, ≤ 9 columns per band, a 400px gap between bands. Keep the
+   layout map in code (route → column, state → row) so a re-run lands in the same place.
+10. **State the budget before starting** ("~40 calls: 3 screens × ~12 + 4 screenshots")
    and check Paper's usage meter before a long session.
 
 ## Connecting
@@ -108,6 +116,7 @@ boards are buildable, not invented. Reuse a shared sidebar/header via
 
 ## Gotchas (verified against paper-desktop 0.5.4)
 
+- `create_artboard` accepts but ignores `left`/`top`; `update_styles` on the artboard is the only way to position it.
 - `layer-name` is the only naming hook in `write_html`; `id`/`title`/`aria-label` do nothing for the tree.
 
 - `get_tree_summary` returns JSON; `json.loads(t)["summary"]` then regex.
