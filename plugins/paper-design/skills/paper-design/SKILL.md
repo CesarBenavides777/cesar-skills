@@ -69,8 +69,12 @@ for how to execute without burning the quota.
    grid — **one column per route/flow, one row per state** (default, loading, empty, locked,
    error, dialogs), 120px gutters, ≤ 9 columns per band, a 400px gap between bands. Keep the
    layout map in code (route → column, state → row) so a re-run lands in the same place.
-   Rows are canonical states — Default · Loading · Empty · Gated/not-found · Error/filtered ·
-   Dialog/overlay · Variants — so the same row means the same thing in every column. Add
+   Rows are canonical, **typed** states — never "Variant 1/2/3": Default · Loading · Empty ·
+   Gated / not found · Error / filtered · Dialog / overlay · Secondary tab / view · Tertiary
+   tab / view · Alternate tier / plan · Populated / in-flight — each row title carries a
+   one-line descriptor of what belongs there ("skeletons · first fetch"), and **every
+   section repeats its own row titles** on its left edge (only the rows it uses), so each
+   block is self-contained at any zoom. Add
    **axis title frames**, with two deliberately different treatments so the axes never read
    alike: X (column) titles are short wide banners above each column (1440×160, card fill,
    route name at ≈96px/800 + a small "N boards" sub-line, 40px above the column); Y (row)
