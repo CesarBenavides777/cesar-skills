@@ -24,12 +24,22 @@ for how to execute without burning the quota.
 
 1. **One `write_html` per section / row / card grid, not per element.** Paper's own
    "write small, write often" guide is UX advice; it costs 5–7× the calls. Target
-   ≤ 12 calls per artboard.
+   ≤ 12 calls per artboard. Each write also *returns every created node id* — via the
+   `mcp__paper__*` tools that payload lands in the transcript and is resent with every
+   later request, so a long seed is cheapest as one script run (bridge path, rule 6):
+   fewer calls **and** one tool result instead of a hundred.
 2. **Never re-query what a write already returned.** `write_html` returns every created
    node id — `scripts/p.py::write()` hands them back as a list. `get_tree_summary` /
    `get_computed_styles` are for inspecting designs *you didn't just write*.
-3. **One screenshot per milestone** (section landed, artboard finished). Scale 1 or 0.5
-   only — 0.6 returns a black image. Review against Paper's checklist, then move on.
+3. **One screenshot per milestone** (section landed, artboard finished), captured at
+   **scale 0.5** — image tokens scale with pixel *area*, so half scale is a quarter the
+   context cost, and 1440×900 at 0.5 still reads for layout, hierarchy and breakage.
+   Scale 1 only to judge fine type or hairline borders; 0.6 returns a black image.
+   Reviewing several boards? Capture with `shot()`, stitch with
+   `sheet([...], "review.jpg")`, and read the **one** contact sheet — 6 boards cost
+   ~1.2k tokens as a sheet vs ~10k as six captures. Review it, then move on: never
+   re-read a capture you have already reviewed, and never re-shoot a board to
+   "double-check" — every image stays in context for the rest of the session.
 4. **Zero fix-up calls.** Every write's root div sets `color` and `font-family`
    explicitly (text nodes do NOT inherit from the artboard). Create containers with
    their first child inline — an empty `<div>` becomes a Rectangle that cannot take
@@ -91,8 +101,22 @@ for how to execute without burning the quota.
     (same geometry, names prefixed `Light · `) placed to the right of the entire dark canvas;
     clone the title frames with `duplicate_nodes` and re-place them. A component fix = re-run
     the generator in both modes.
-11. **State the budget before starting** ("~40 calls: 3 screens × ~12 + 4 screenshots")
-   and check Paper's usage meter before a long session.
+11. **State both budgets before starting** — MCP calls ("~40: 3 screens × ~12 + 4
+   screenshots") *and* context ("~25k tokens: one generator, 4 half-scale captures as
+   one sheet"). Check Paper's usage meter before a long session.
+12. **Context is the other meter, and it compounds.** Everything in the transcript is
+   resent on every subsequent request, so a seed that ends at 120k tokens of context
+   costs 120k *per call* for the rest of the session — that is how a full seed burns a
+   provider's weekly plan quota in one afternoon. Keep it out of context:
+   - **Generators stay on disk.** Author with Write once, then **Edit in place** — never
+     re-emit a whole file to change a section, and never paste generated HTML back into
+     the conversation. Run them headless; `print()` only counts and the handful of ids
+     you need next.
+   - **Persist, don't echo.** Node ids → `ids.json` / `boards.jsonl` on disk. Never read
+     those dumps back into context — query them with a one-liner that prints ≤ 20 lines.
+   - **Captures**: rule 3.
+   - Re-runs read the persisted ids file; they never re-derive state with
+     `get_tree_summary` (rule 2 applies to your own writes too).
 
 ## Connecting
 
@@ -146,6 +170,8 @@ boards are buildable, not invented. Reuse a shared sidebar/header via
   the token there; fills/strokes on shapes can take `var()`.
 - `set_text_content` takes `updates: [{nodeId, textContent}]`.
 - A build interrupted mid-run may still have created boards — dedupe by name before laying out.
+- Board dumps get big fast (a full two-mode seed leaves ~200 KB of `boards*.jsonl` — reading
+  both back is ~50k tokens). Grep them from a script; print only what you need.
 
 - `create_artboard` accepts but ignores `left`/`top`; `update_styles` on the artboard is the only way to position it.
 - `layer-name` is the only naming hook in `write_html`; `id`/`title`/`aria-label` do nothing for the tree.
