@@ -111,6 +111,7 @@
       "--glass-tint-card": "hsl(220 14% 96% / 0.55)",
       "--glass-tint-nav": "hsl(220 14% 98% / 0.65)",
       "--glass-tint-modal": "hsl(220 14% 98% / 0.75)",
+      "--glass-tint-menu": "hsl(220 14% 98% / 0.94)",
       "--glass-edge": "hsl(0 0% 100% / 0.35)",
       "--glass-blur": "20px",
       "--glass-saturate": "140%",
@@ -159,6 +160,7 @@
       "--glass-tint-card": "hsl(220 7% 20% / 0.38)",
       "--glass-tint-nav": "hsl(220 7% 15% / 0.42)",
       "--glass-tint-modal": "hsl(220 7% 18% / 0.55)",
+      "--glass-tint-menu": "hsl(220 7% 15% / 0.92)",
       "--glass-edge": "hsl(0 0% 100% / 0.12)",
       "--glass-blur": "28px",
       "--glass-saturate": "180%",
@@ -246,6 +248,9 @@
     },
     "[data-theme=\"moneytrees\"] .mt-liquid-css[data-variant=\"modal\"]": {
       "background-color": "var(--glass-tint-modal)"
+    },
+    "[data-theme=\"moneytrees\"] .mt-liquid-css[data-variant=\"menu\"]": {
+      "background-color": "var(--glass-tint-menu)"
     },
     "[data-theme=\"moneytrees\"] .mt-liquid-css:hover": {
       "box-shadow": "var(--shadow-bubble-hover)"

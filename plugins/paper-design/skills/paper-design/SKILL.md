@@ -24,15 +24,15 @@ for how to execute without burning the quota.
 
 1. **One `write_html` per section / row / card grid, not per element.** Paper's own
    "write small, write often" guide is UX advice; it costs 5–7× the calls. Target
-   ≤ 12 calls per artboard. Each write also *returns every created node id* — via the
+   ≤ 12 calls per artboard. Each write also _returns every created node id_ — via the
    `mcp__paper__*` tools that payload lands in the transcript and is resent with every
    later request, so a long seed is cheapest as one script run (bridge path, rule 6):
    fewer calls **and** one tool result instead of a hundred.
 2. **Never re-query what a write already returned.** `write_html` returns every created
    node id — `scripts/p.py::write()` hands them back as a list. `get_tree_summary` /
-   `get_computed_styles` are for inspecting designs *you didn't just write*.
+   `get_computed_styles` are for inspecting designs _you didn't just write_.
 3. **One screenshot per milestone** (section landed, artboard finished), captured at
-   **scale 0.5** — image tokens scale with pixel *area*, so half scale is a quarter the
+   **scale 0.5** — image tokens scale with pixel _area_, so half scale is a quarter the
    context cost, and 1440×900 at 0.5 still reads for layout, hierarchy and breakage.
    Scale 1 only to judge fine type or hairline borders; 0.6 returns a black image.
    Reviewing several boards? Capture with `shot()`, stitch with
@@ -51,7 +51,7 @@ for how to execute without burning the quota.
 6. **Draft off-canvas.** Compose the HTML locally (f-strings / a scratch file), eyeball
    it in a browser if unsure, push only the final markup. Local is free; Paper isn't.
 7. **Name every layer at write time.** Put `layer-name="…"` on every element you write
-   (containers *and* leaves); Paper otherwise names everything "Frame", which makes the
+   (containers _and_ leaves); Paper otherwise names everything "Frame", which makes the
    layer tree useless to a designer. It costs zero extra calls — `rename_nodes` after the
    fact does. Convention (kind · specifics, ≤ 50 chars):
    artboards `Foundations` / `Components` / `Screen · Dashboard · default|loading|empty|error|locked`;
@@ -102,21 +102,22 @@ for how to execute without burning the quota.
     clone the title frames with `duplicate_nodes` and re-place them. A component fix = re-run
     the generator in both modes.
 11. **State both budgets before starting** — MCP calls ("~40: 3 screens × ~12 + 4
-   screenshots") *and* context ("~25k tokens: one generator, 4 half-scale captures as
-   one sheet"). Check Paper's usage meter before a long session.
+    screenshots") _and_ context ("~25k tokens: one generator, 4 half-scale captures as
+    one sheet"). Check Paper's usage meter before a long session.
 12. **Context is the other meter, and it compounds.** Everything in the transcript is
-   resent on every subsequent request, so a seed that ends at 120k tokens of context
-   costs 120k *per call* for the rest of the session — that is how a full seed burns a
-   provider's weekly plan quota in one afternoon. Keep it out of context:
-   - **Generators stay on disk.** Author with Write once, then **Edit in place** — never
-     re-emit a whole file to change a section, and never paste generated HTML back into
-     the conversation. Run them headless; `print()` only counts and the handful of ids
-     you need next.
-   - **Persist, don't echo.** Node ids → `ids.json` / `boards.jsonl` on disk. Never read
-     those dumps back into context — query them with a one-liner that prints ≤ 20 lines.
-   - **Captures**: rule 3.
-   - Re-runs read the persisted ids file; they never re-derive state with
-     `get_tree_summary` (rule 2 applies to your own writes too).
+    resent on every subsequent request, so a seed that ends at 120k tokens of context
+    costs 120k _per call_ for the rest of the session — that is how a full seed burns a
+    provider's weekly plan quota in one afternoon. Keep it out of context:
+
+- **Generators stay on disk.** Author with Write once, then **Edit in place** — never
+  re-emit a whole file to change a section, and never paste generated HTML back into
+  the conversation. Run them headless; `print()` only counts and the handful of ids
+  you need next.
+- **Persist, don't echo.** Node ids → `ids.json` / `boards.jsonl` on disk. Never read
+  those dumps back into context — query them with a one-liner that prints ≤ 20 lines.
+- **Captures**: rule 3.
+- Re-runs read the persisted ids file; they never re-derive state with
+  `get_tree_summary` (rule 2 applies to your own writes too).
 
 ## Connecting
 

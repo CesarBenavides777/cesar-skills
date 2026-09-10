@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-toggle",
+  "type": "registry:component",
+  "title": "Theme Toggle",
+  "description": "Theme Toggle — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "lucide-react@^0.460.0"
+  ],
+  "files": [
+    {
+      "path": "packages/moneytrees-ui/src/components/theme-toggle.tsx",
+      "type": "registry:component",
+      "target": "@components/moneytrees/theme-toggle.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Moon, Sun } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * Dark/light toggle for the moneytrees theme. The token sheet already ships\n * both palettes — `[data-theme=\"moneytrees\"]` is the light base and `.dark`\n * overrides it — so toggling is just the `dark` class on <html>, persisted to\n * localStorage(\"mt-theme\"). index.html applies the stored choice pre-paint\n * (inline script) so there's no flash; this component only reflects and\n * flips it. SSR renders the dark state (the shipped default) and corrects on\n * mount if the visitor chose light.\n */\n\nconst STORAGE_KEY = \"mt-theme\";\n\nfunction currentIsDark(): boolean {\n  if (typeof document === \"undefined\") return true;\n  return document.documentElement.classList.contains(\"dark\");\n}\n\nexport function applyTheme(dark: boolean): void {\n  document.documentElement.classList.toggle(\"dark\", dark);\n  try {\n    localStorage.setItem(STORAGE_KEY, dark ? \"dark\" : \"light\");\n  } catch {\n    // storage can be unavailable (private mode); the class still applies\n  }\n  window.dispatchEvent(new CustomEvent(\"mt-theme-change\", { detail: { dark } }));\n}\n\n/** Subscribe-to-DOM hook so every toggle instance stays in sync. */\nexport function useMoneytreesTheme(): [boolean, (dark: boolean) => void] {\n  const [dark, setDark] = React.useState(true);\n  React.useEffect(() => {\n    setDark(currentIsDark());\n    const onChange = (e: Event) => setDark((e as CustomEvent<{ dark: boolean }>).detail.dark);\n    window.addEventListener(\"mt-theme-change\", onChange);\n    return () => window.removeEventListener(\"mt-theme-change\", onChange);\n  }, []);\n  return [dark, applyTheme];\n}\n\nexport function ThemeToggle({ className }: { className?: string }) {\n  const [dark, setTheme] = useMoneytreesTheme();\n  return (\n    <button\n      type=\"button\"\n      aria-label={dark ? \"Switch to light mode\" : \"Switch to dark mode\"}\n      onClick={() => setTheme(!dark)}\n      className={cn(\n        \"inline-flex size-9 items-center justify-center rounded-bubble-pill border border-border text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground\",\n        className,\n      )}\n    >\n      {dark ? <Sun className=\"size-4\" aria-hidden /> : <Moon className=\"size-4\" aria-hidden />}\n    </button>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "moneytrees"
+  ],
+  "meta": {
+    "family": "moneytrees",
+    "source": "packages/moneytrees-ui/src/components"
+  }
+}

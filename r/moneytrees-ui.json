@@ -8,7 +8,9 @@
   "registryDependencies": [
     "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/agent-card.json",
     "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/bending-sidebar.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chat-threads-panel.json",
     "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/data-table-v2.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/feature-art.json",
     "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/liquid-surface.json",
     "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/live-feed-table.json",
     "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/moneytrees-logo.json",
@@ -17,6 +19,7 @@
     "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/pnl-badge.json",
     "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/sentiment-meter.json",
     "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/theme-provider.json",
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/theme-toggle.json",
     "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/ticker-card.json",
     "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/ticker-chart.json",
     "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/usage-meter.json"
@@ -30,7 +33,9 @@
     "registryDependencyNames": [
       "agent-card",
       "bending-sidebar",
+      "chat-threads-panel",
       "data-table-v2",
+      "feature-art",
       "liquid-surface",
       "live-feed-table",
       "moneytrees-logo",
@@ -39,6 +44,7 @@
       "pnl-badge",
       "sentiment-meter",
       "theme-provider",
+      "theme-toggle",
       "ticker-card",
       "ticker-chart",
       "usage-meter"

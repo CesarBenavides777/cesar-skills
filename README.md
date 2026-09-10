@@ -56,14 +56,14 @@ skills are also inside their plugin and in the registry. See [skills/README.md](
 ## shadcn registry
 
 `registry.json` is the index; `r/<name>.json` are the installable items (every file inlined,
-so raw GitHub serves them as-is). 92 items:
+so raw GitHub serves them as-is). 95 items:
 
 - **Agent skills** (1): `paper-design`
 - **UI primitives (shadcn/Radix family → `components/ui/`)** (37): `accordion`, `alert`, `alert-dialog`, `avatar`, `badge`, `button`, `button-group`, `card`, `card-skeleton`, `carousel`, `chart`, `collapsible`, `command`, `dialog`, `dropdown-menu`, `empty-state`, `hover-card`, `input`, `input-group`, `label`, `popover`, `progress`, `scroll-area`, `section-error`, `select`, `separator`, `sheet`, `sidebar`, `skeleton`, `slider`, `sonner`, `spinner`, `switch`, `table`, `tabs`, `textarea`, `tooltip`
 - **UI primitives (React Aria family → `components/aria/`)** (36): `aria-accordion`, `aria-alert`, `aria-alert-dialog`, `aria-avatar`, `aria-badge`, `aria-button`, `aria-button-group`, `aria-card`, `aria-checkbox`, `aria-collapsible`, `aria-command`, `aria-dialog`, `aria-dropdown-menu`, `aria-empty`, `aria-field`, `aria-input`, `aria-input-group`, `aria-label`, `aria-popover`, `aria-progress`, `aria-scroll-area`, `aria-select`, `aria-separator`, `aria-sheet`, `aria-sidebar`, `aria-skeleton`, `aria-slider`, `aria-sonner`, `aria-spinner`, `aria-switch`, `aria-table`, `aria-tabs`, `aria-textarea`, `aria-toggle`, `aria-toggle-group`, `aria-tooltip`
 - **Shared lib/hooks** (2): `use-mobile`, `utils`
 - **Themes** (2): `moneytrees-theme`, `theme`
-- **moneytrees (→ `components/moneytrees/`)** (14): `agent-card`, `bending-sidebar`, `data-table-v2`, `liquid-surface`, `live-feed-table`, `moneytrees-logo`, `moneytrees-ui`, `onboarding-tour`, `pnl-badge`, `sentiment-meter`, `theme-provider`, `ticker-card`, `ticker-chart`, `usage-meter`
+- **moneytrees (→ `components/moneytrees/`)** (17): `agent-card`, `bending-sidebar`, `chat-threads-panel`, `data-table-v2`, `feature-art`, `liquid-surface`, `live-feed-table`, `moneytrees-logo`, `moneytrees-ui`, `onboarding-tour`, `pnl-badge`, `sentiment-meter`, `theme-provider`, `theme-toggle`, `ticker-card`, `ticker-chart`, `usage-meter`
 
 Items reference each other by absolute `https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/<name>.json` URLs, so a single `add` pulls
 its whole dependency chain. `utils` (`cn`) is assumed to exist from `shadcn init`.
