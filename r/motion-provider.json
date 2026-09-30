@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "motion-provider",
+  "type": "registry:component",
+  "title": "Motion Provider",
+  "description": "Motion Provider — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "motion@^12.43.0"
+  ],
+  "files": [
+    {
+      "path": "packages/moneytrees-ui/src/components/motion-provider.tsx",
+      "type": "registry:component",
+      "target": "@components/moneytrees/motion-provider.tsx",
+      "content": "\"use client\";\n\nimport { LazyMotion, domAnimation } from \"motion/react\";\nimport type { ReactNode } from \"react\";\n\nexport function MotionProvider({ children }: { children: ReactNode }) {\n  return <LazyMotion features={domAnimation}>{children}</LazyMotion>;\n}\n"
+    }
+  ],
+  "categories": [
+    "moneytrees"
+  ],
+  "meta": {
+    "family": "moneytrees",
+    "source": "packages/moneytrees-ui/src/components"
+  }
+}

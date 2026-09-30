@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radar-chart",
+  "type": "registry:component",
+  "title": "Radar Chart",
+  "description": "Radar Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "recharts@2.15.4"
+  ],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-kit.json"
+  ],
+  "files": [
+    {
+      "path": "packages/moneytrees-ui/src/charts/radar-chart.tsx",
+      "type": "registry:component",
+      "target": "@components/moneytrees/charts/radar-chart.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport {\n  PolarAngleAxis,\n  PolarGrid,\n  PolarRadiusAxis,\n  Radar,\n  RadarChart as RechartsRadarChart,\n  ResponsiveContainer,\n  Tooltip,\n} from \"recharts\";\nimport { cn } from \"@/lib/utils\";\nimport {\n  type ChartDatum,\n  ChartFrame,\n  ChartGlowFilter,\n  ChartLegend,\n  ChartLoadingBars,\n  ChartPlotSurface,\n  type ChartSeries,\n  ChartTooltipContent,\n  HOVER_TRANSITION,\n  axisTick,\n  markOpacity,\n  resolveSeries,\n  useChartId,\n  useChartMotion,\n} from \"@/components/moneytrees/charts/chart-kit\";\n\nexport type RadarFillVariant = \"filled\" | \"lines\";\nexport type RadarGridType = \"polygon\" | \"circle\";\n\nexport interface SpectrumRadarChartProps {\n  className?: string;\n  data: ChartDatum[];\n  xKey: string;\n  series: ChartSeries[];\n  variant?: RadarFillVariant;\n  gridType?: RadarGridType;\n  glowing?: boolean;\n  isLoading?: boolean;\n  showLegend?: boolean;\n  height?: number;\n  formatValue?: (value: number) => string;\n}\n\nexport function RadarChart({\n  className,\n  data,\n  xKey,\n  series,\n  variant = \"filled\",\n  gridType = \"polygon\",\n  glowing = false,\n  isLoading = false,\n  showLegend = true,\n  height,\n  formatValue,\n}: SpectrumRadarChartProps) {\n  const id = useChartId(\"radar\");\n  const { isAnimationActive, animationDuration } = useChartMotion();\n  const [activeKey, setActiveKey] = React.useState<string | null>(null);\n  const rings = resolveSeries(series);\n  const glowId = `${id}-glow`;\n  const filled = variant === \"filled\";\n\n  return (\n    <ChartFrame className={cn(\"flex flex-col\", className)} height={height}>\n      {showLegend && rings.length > 1 ? <ChartLegend items={rings} /> : null}\n      {isLoading ? (\n        <ChartLoadingBars count={8} />\n      ) : (\n        <ChartPlotSurface>\n          <ResponsiveContainer width=\"100%\" height=\"100%\">\n            <RechartsRadarChart\n              data={data}\n              cx=\"50%\"\n              cy=\"50%\"\n              outerRadius=\"72%\"\n              onMouseLeave={() => setActiveKey(null)}\n            >\n              <defs>{glowing ? <ChartGlowFilter id={glowId} /> : null}</defs>\n              <PolarGrid gridType={gridType} stroke=\"currentColor\" strokeOpacity={0.18} />\n              <PolarAngleAxis dataKey={xKey} tick={axisTick} />\n              <PolarRadiusAxis tick={false} axisLine={false} />\n              <Tooltip content={<ChartTooltipContent formatValue={formatValue} />} />\n              {rings.map((s, i) => (\n                <Radar\n                  key={s.key}\n                  dataKey={s.key}\n                  name={s.label}\n                  stroke={s.color}\n                  fill={s.color}\n                  fillOpacity={filled ? (i === 0 ? 0.22 : 0.16) : 0}\n                  strokeWidth={2}\n                  isAnimationActive={isAnimationActive}\n                  animationDuration={animationDuration}\n                  animationEasing=\"ease-out\"\n                  filter={glowing && i === 0 ? `url(#${glowId})` : undefined}\n                  style={{\n                    opacity: markOpacity(activeKey, s.key),\n                    transition: HOVER_TRANSITION,\n                    cursor: \"pointer\",\n                  }}\n                  onMouseEnter={() => setActiveKey(s.key)}\n                />\n              ))}\n            </RechartsRadarChart>\n          </ResponsiveContainer>\n        </ChartPlotSurface>\n      )}\n    </ChartFrame>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "moneytrees",
+    "charts"
+  ],
+  "meta": {
+    "family": "moneytrees-charts",
+    "source": "packages/moneytrees-ui/src/charts",
+    "registryDependencyNames": [
+      "chart-kit"
+    ]
+  }
+}

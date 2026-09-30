@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "line-chart",
+  "type": "registry:component",
+  "title": "Line Chart",
+  "description": "Line Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "recharts@2.15.4"
+  ],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-kit.json"
+  ],
+  "files": [
+    {
+      "path": "packages/moneytrees-ui/src/charts/line-chart.tsx",
+      "type": "registry:component",
+      "target": "@components/moneytrees/charts/line-chart.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport {\n  CartesianGrid,\n  Line,\n  LineChart as RechartsLineChart,\n  ResponsiveContainer,\n  Tooltip,\n  XAxis,\n  YAxis,\n} from \"recharts\";\nimport { cn } from \"@/lib/utils\";\nimport {\n  AnimatedDashedStroke,\n  ChartActiveDot,\n  type ChartDatum,\n  ChartFrame,\n  ChartGlowFilter,\n  chartGrid,\n  ChartLegend,\n  ChartLoadingBars,\n  ChartPlotSurface,\n  ChartRestingDot,\n  type ChartSeries,\n  ChartTooltipContent,\n  chartXAxis,\n  chartYAxis,\n  type ChartDotRenderProps,\n  compactFormatValue,\n  RevealMask,\n  resolveSeries,\n  type StrokeVariant,\n  strokeDasharray,\n  useChartId,\n  useChartMotion,\n  useIntroStartedAt,\n} from \"@/components/moneytrees/charts/chart-kit\";\n\nexport type LineCurve = \"monotone\" | \"bump\" | \"step\" | \"linear\";\n\nexport interface SpectrumLineChartProps {\n  className?: string;\n  data: ChartDatum[];\n  xKey: string;\n  series: ChartSeries[];\n  curveType?: LineCurve;\n  strokeVariant?: StrokeVariant;\n  glowing?: boolean;\n  gradientStroke?: boolean;\n  isLoading?: boolean;\n  showLegend?: boolean;\n  showDots?: boolean;\n  showGrid?: boolean;\n  height?: number;\n  formatX?: (value: string | number) => string;\n  formatValue?: (value: number) => string;\n}\n\nexport function LineChart({\n  className,\n  data,\n  xKey,\n  series,\n  curveType = \"monotone\",\n  strokeVariant = \"solid\",\n  glowing = false,\n  gradientStroke = false,\n  isLoading = false,\n  showLegend = true,\n  showDots = true,\n  showGrid = true,\n  height,\n  formatX,\n  formatValue,\n}: SpectrumLineChartProps) {\n  const id = useChartId(\"line\");\n  const { reduce } = useChartMotion();\n  const introStartedAt = useIntroStartedAt();\n  const lines = resolveSeries(series);\n  const glowId = `${id}-glow`;\n  const maskId = `${id}-reveal`;\n  const maskStyle = reduce ? undefined : { mask: `url(#${maskId})` };\n  const dots = showDots && data.length <= 40;\n\n  return (\n    <ChartFrame className={cn(\"flex flex-col\", className)} height={height}>\n      {showLegend && lines.length > 1 ? <ChartLegend items={lines} /> : null}\n      {isLoading ? (\n        <ChartLoadingBars />\n      ) : (\n        <ChartPlotSurface>\n          <ResponsiveContainer width=\"100%\" height=\"100%\">\n            <RechartsLineChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>\n              <defs>\n                {gradientStroke\n                  ? lines.map((s, i) => (\n                      <linearGradient\n                        key={s.key}\n                        id={`${id}-${s.key}-stroke`}\n                        x1=\"0\"\n                        y1=\"0\"\n                        x2=\"1\"\n                        y2=\"0\"\n                      >\n                        <stop offset=\"0%\" stopColor={s.color} />\n                        <stop offset=\"100%\" stopColor={lines[(i + 1) % lines.length]!.color} />\n                      </linearGradient>\n                    ))\n                  : null}\n                {glowing ? <ChartGlowFilter id={glowId} /> : null}\n                <RevealMask id={maskId} introStartedAt={introStartedAt} reduce={reduce} />\n              </defs>\n              {showGrid ? <CartesianGrid {...chartGrid} /> : null}\n              <XAxis {...chartXAxis} dataKey={xKey} tickFormatter={formatX} />\n              <YAxis {...chartYAxis} tickFormatter={formatValue ?? compactFormatValue} />\n              <Tooltip\n                cursor={{ stroke: \"currentColor\", strokeOpacity: 0.22, strokeDasharray: \"4 4\" }}\n                content={<ChartTooltipContent formatValue={formatValue} formatLabel={formatX} />}\n              />\n              {lines.map((s, i) => (\n                <Line\n                  key={s.key}\n                  type={curveType}\n                  dataKey={s.key}\n                  name={s.label}\n                  stroke={\n                    gradientStroke && lines.length > 1 ? `url(#${id}-${s.key}-stroke)` : s.color\n                  }\n                  strokeWidth={2.25}\n                  strokeDasharray={strokeDasharray(strokeVariant)}\n                  dot={\n                    dots\n                      ? (props: ChartDotRenderProps) => (\n                          <ChartRestingDot\n                            key={`dot-${props.index}`}\n                            cx={props.cx}\n                            cy={props.cy}\n                            color={s.color}\n                            maskId={reduce ? undefined : maskId}\n                          />\n                        )\n                      : false\n                  }\n                  activeDot={(props: ChartDotRenderProps) => (\n                    <ChartActiveDot\n                      key={`active-${props.index}`}\n                      cx={props.cx}\n                      cy={props.cy}\n                      color={s.color}\n                    />\n                  )}\n                  isAnimationActive={false}\n                  filter={glowing && i === 0 ? `url(#${glowId})` : undefined}\n                  style={maskStyle}\n                >\n                  {strokeVariant === \"animated-dashed\" ? <AnimatedDashedStroke /> : null}\n                </Line>\n              ))}\n            </RechartsLineChart>\n          </ResponsiveContainer>\n        </ChartPlotSurface>\n      )}\n    </ChartFrame>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "moneytrees",
+    "charts"
+  ],
+  "meta": {
+    "family": "moneytrees-charts",
+    "source": "packages/moneytrees-ui/src/charts",
+    "registryDependencyNames": [
+      "chart-kit"
+    ]
+  }
+}

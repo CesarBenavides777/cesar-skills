@@ -11,3 +11,12 @@ Design in Paper Desktop (paper.design, the "paper" design MCP) under its weekly 
 npx skills add CesarBenavides777/cesar-skills --skill paper-design
 npx shadcn@latest add https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/paper-design.json
 ```
+
+### [`simple-html-recap`](./simple-html-recap/SKILL.md)
+
+A "super simple" single-file HTML format for recaps, summaries, and shipped-work lists, with tone, writing conventions and theme adjustable per user or project through a recap-style.md file. Use when asked for a recap, summary, changelog or shipped list "in html", or when delivering weekly-recap output as HTML instead of markdown or chat.
+
+```
+npx skills add CesarBenavides777/cesar-skills --skill simple-html-recap
+npx shadcn@latest add https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/simple-html-recap.json
+```

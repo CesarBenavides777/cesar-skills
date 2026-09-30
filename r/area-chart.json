@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "area-chart",
+  "type": "registry:component",
+  "title": "Area Chart",
+  "description": "Area Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "recharts@2.15.4"
+  ],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-kit.json"
+  ],
+  "files": [
+    {
+      "path": "packages/moneytrees-ui/src/charts/area-chart.tsx",
+      "type": "registry:component",
+      "target": "@components/moneytrees/charts/area-chart.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport {\n  Area,\n  AreaChart as RechartsAreaChart,\n  CartesianGrid,\n  ResponsiveContainer,\n  Tooltip,\n  XAxis,\n  YAxis,\n} from \"recharts\";\nimport { cn } from \"@/lib/utils\";\nimport {\n  AreaFillDefs,\n  type AreaFillVariant,\n  AnimatedDashedStroke,\n  ChartActiveDot,\n  type ChartDatum,\n  ChartFrame,\n  ChartGlowFilter,\n  chartGrid,\n  ChartLegend,\n  ChartLoadingBars,\n  ChartPlotSurface,\n  type ChartSeries,\n  ChartTooltipContent,\n  chartXAxis,\n  chartYAxis,\n  type ChartDotRenderProps,\n  compactFormatValue,\n  RevealMask,\n  resolveSeries,\n  type StrokeVariant,\n  areaFillUrl,\n  strokeDasharray,\n  useChartId,\n  useChartMotion,\n  useIntroStartedAt,\n} from \"@/components/moneytrees/charts/chart-kit\";\n\nexport type { AreaFillVariant };\n\nexport type AreaCurve = \"monotone\" | \"bump\" | \"step\" | \"linear\";\nexport type AreaStackType = \"none\" | \"stacked\" | \"expanded\";\n\nexport interface SpectrumAreaChartProps {\n  className?: string;\n  data: ChartDatum[];\n  xKey: string;\n  series: ChartSeries[];\n  variant?: AreaFillVariant;\n  curveType?: AreaCurve;\n  stackType?: AreaStackType;\n  strokeVariant?: StrokeVariant;\n  glowing?: boolean;\n  isLoading?: boolean;\n  showLegend?: boolean;\n  showGrid?: boolean;\n  height?: number;\n  formatX?: (value: string | number) => string;\n  formatValue?: (value: number) => string;\n}\n\nexport function AreaChart({\n  className,\n  data,\n  xKey,\n  series,\n  variant = \"gradient\",\n  curveType = \"monotone\",\n  stackType = \"none\",\n  strokeVariant = \"solid\",\n  glowing = false,\n  isLoading = false,\n  showLegend = true,\n  showGrid = true,\n  height,\n  formatX,\n  formatValue,\n}: SpectrumAreaChartProps) {\n  const id = useChartId(\"area\");\n  const { reduce } = useChartMotion();\n  const introStartedAt = useIntroStartedAt();\n  const lines = resolveSeries(series);\n  const stacked = stackType !== \"none\";\n  const glowId = `${id}-glow`;\n  const maskId = `${id}-reveal`;\n  const maskStyle = reduce ? undefined : { mask: `url(#${maskId})` };\n\n  return (\n    <ChartFrame className={cn(\"flex flex-col\", className)} height={height}>\n      {showLegend && lines.length > 1 ? <ChartLegend items={lines} /> : null}\n      {isLoading ? (\n        <ChartLoadingBars />\n      ) : (\n        <ChartPlotSurface>\n          <ResponsiveContainer width=\"100%\" height=\"100%\">\n            <RechartsAreaChart\n              data={data}\n              stackOffset={stackType === \"expanded\" ? \"expand\" : undefined}\n              margin={{ top: 8, right: 8, left: 0, bottom: 0 }}\n            >\n              <defs>\n                {lines.map((s) => (\n                  <AreaFillDefs\n                    key={s.key}\n                    id={`${id}-${s.key}`}\n                    color={s.color}\n                    variant={variant}\n                  />\n                ))}\n                {glowing ? <ChartGlowFilter id={glowId} /> : null}\n                <RevealMask id={maskId} introStartedAt={introStartedAt} reduce={reduce} />\n              </defs>\n              {showGrid ? <CartesianGrid {...chartGrid} /> : null}\n              <XAxis {...chartXAxis} dataKey={xKey} tickFormatter={formatX} />\n              <YAxis\n                {...chartYAxis}\n                hide={stackType === \"expanded\"}\n                tickFormatter={formatValue ?? compactFormatValue}\n              />\n              <Tooltip\n                cursor={{ stroke: \"currentColor\", strokeOpacity: 0.22, strokeDasharray: \"4 4\" }}\n                content={<ChartTooltipContent formatValue={formatValue} formatLabel={formatX} />}\n              />\n              {lines.map((s, i) => (\n                <Area\n                  key={s.key}\n                  type={curveType}\n                  dataKey={s.key}\n                  name={s.label}\n                  stroke={s.color}\n                  strokeWidth={2}\n                  strokeDasharray={strokeDasharray(strokeVariant)}\n                  fill={areaFillUrl(`${id}-${s.key}`, variant, s.color)}\n                  fillOpacity={variant === \"solid\" ? 0.28 : 1}\n                  stackId={stacked ? \"stack\" : undefined}\n                  isAnimationActive={false}\n                  activeDot={(props: ChartDotRenderProps) => (\n                    <ChartActiveDot cx={props.cx} cy={props.cy} color={s.color} />\n                  )}\n                  filter={glowing && i === 0 ? `url(#${glowId})` : undefined}\n                  style={maskStyle}\n                >\n                  {strokeVariant === \"animated-dashed\" ? <AnimatedDashedStroke /> : null}\n                </Area>\n              ))}\n            </RechartsAreaChart>\n          </ResponsiveContainer>\n        </ChartPlotSurface>\n      )}\n    </ChartFrame>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "moneytrees",
+    "charts"
+  ],
+  "meta": {
+    "family": "moneytrees-charts",
+    "source": "packages/moneytrees-ui/src/charts",
+    "registryDependencyNames": [
+      "chart-kit"
+    ]
+  }
+}

@@ -16,6 +16,16 @@
       "version": "0.1.8",
       "strict": true,
       "defaultEnabled": true
+    },
+    {
+      "name": "simple-html-recap",
+      "displayName": "Simple HTML Recap",
+      "category": "productivity",
+      "source": "./plugins/simple-html-recap",
+      "description": "A super simple single-file HTML format for recaps, summaries and shipped-work lists, with tone, writing conventions and theme adjustable per user or project through a recap-style.md file.",
+      "version": "0.1.0",
+      "strict": true,
+      "defaultEnabled": true
     }
   ]
 }

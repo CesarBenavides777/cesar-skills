@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "simple-html-recap",
+  "version": "0.1.0",
+  "description": "A super simple single-file HTML format for recaps, summaries and shipped-work lists, with tone, writing conventions and theme adjustable per user or project through a recap-style.md file.",
+  "author": {
+    "name": "Cesar Benavides",
+    "url": "https://github.com/CesarBenavides777/cesar-skills"
+  },
+  "homepage": "https://github.com/CesarBenavides777/cesar-skills",
+  "repository": "https://github.com/CesarBenavides777/cesar-skills",
+  "license": "MIT",
+  "keywords": [
+    "recap",
+    "summary",
+    "changelog",
+    "html",
+    "report",
+    "writing"
+  ],
+  "extensions": {
+    "com.anthropic.claude-code": {
+      "displayName": "Simple HTML Recap",
+      "defaultEnabled": true
+    }
+  }
+}

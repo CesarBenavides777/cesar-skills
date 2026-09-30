@@ -11,6 +11,7 @@ hand-edited.
 ```
 /plugin marketplace add CesarBenavides777/cesar-skills
 /plugin install paper-design@cesar-skills
+/plugin install simple-html-recap@cesar-skills
 ```
 
 **Any agent, via [skills.sh](https://skills.sh)** (copies `skills/<name>/` into the agent's
@@ -43,6 +44,7 @@ npx shadcn@latest add @cesar/paper-design @cesar/moneytrees-ui
 | Plugin | What it does |
 | ------ | ------------ |
 | [`paper-design`](plugins/paper-design) | Design in Paper Desktop (paper.design) under its weekly MCP call quota: batched code-to-design seeds, design-system boards, screen mockups and state variants, plus an HTTP bridge for when the paper MCP tools aren't registered in the session. |
+| [`simple-html-recap`](plugins/simple-html-recap) | A super simple single-file HTML format for recaps, summaries and shipped-work lists, with tone, writing conventions and theme adjustable per user or project through a recap-style.md file. |
 
 ## Skills
 
@@ -52,18 +54,19 @@ skills are also inside their plugin and in the registry. See [skills/README.md](
 | Skill | Description |
 | ----- | ----------- |
 | [`paper-design`](skills/paper-design/SKILL.md) | Design in Paper Desktop (paper.design, the "paper" design MCP) under its weekly MCP call quota — code-to-design seeds, design-system boards, screen mockups, state variants, design-to-code reads. Use whenever the user mentions Paper, paper.design, the paper MCP, seeding a design system, or asks to mock up / diagram screens in Paper. Also use when the `paper` MCP tools are missing from the session (ships an HTTP bridge). |
+| [`simple-html-recap`](skills/simple-html-recap/SKILL.md) | A "super simple" single-file HTML format for recaps, summaries, and shipped-work lists, with tone, writing conventions and theme adjustable per user or project through a recap-style.md file. Use when asked for a recap, summary, changelog or shipped list "in html", or when delivering weekly-recap output as HTML instead of markdown or chat. |
 
 ## shadcn registry
 
 `registry.json` is the index; `r/<name>.json` are the installable items (every file inlined,
-so raw GitHub serves them as-is). 95 items:
+so raw GitHub serves them as-is). 119 items:
 
-- **Agent skills** (1): `paper-design`
+- **Agent skills** (2): `paper-design`, `simple-html-recap`
 - **UI primitives (shadcn/Radix family → `components/ui/`)** (37): `accordion`, `alert`, `alert-dialog`, `avatar`, `badge`, `button`, `button-group`, `card`, `card-skeleton`, `carousel`, `chart`, `collapsible`, `command`, `dialog`, `dropdown-menu`, `empty-state`, `hover-card`, `input`, `input-group`, `label`, `popover`, `progress`, `scroll-area`, `section-error`, `select`, `separator`, `sheet`, `sidebar`, `skeleton`, `slider`, `sonner`, `spinner`, `switch`, `table`, `tabs`, `textarea`, `tooltip`
 - **UI primitives (React Aria family → `components/aria/`)** (36): `aria-accordion`, `aria-alert`, `aria-alert-dialog`, `aria-avatar`, `aria-badge`, `aria-button`, `aria-button-group`, `aria-card`, `aria-checkbox`, `aria-collapsible`, `aria-command`, `aria-dialog`, `aria-dropdown-menu`, `aria-empty`, `aria-field`, `aria-input`, `aria-input-group`, `aria-label`, `aria-popover`, `aria-progress`, `aria-scroll-area`, `aria-select`, `aria-separator`, `aria-sheet`, `aria-sidebar`, `aria-skeleton`, `aria-slider`, `aria-sonner`, `aria-spinner`, `aria-switch`, `aria-table`, `aria-tabs`, `aria-textarea`, `aria-toggle`, `aria-toggle-group`, `aria-tooltip`
 - **Shared lib/hooks** (2): `use-mobile`, `utils`
 - **Themes** (2): `moneytrees-theme`, `theme`
-- **moneytrees (→ `components/moneytrees/`)** (17): `agent-card`, `bending-sidebar`, `chat-threads-panel`, `data-table-v2`, `feature-art`, `liquid-surface`, `live-feed-table`, `moneytrees-logo`, `moneytrees-ui`, `onboarding-tour`, `pnl-badge`, `sentiment-meter`, `theme-provider`, `theme-toggle`, `ticker-card`, `ticker-chart`, `usage-meter`
+- **moneytrees (→ `components/moneytrees/`)** (19): `agent-card`, `bending-sidebar`, `data-table-v2`, `feature-art`, `liquid-surface`, `live-feed-table`, `moneytrees-logo`, `moneytrees-ui`, `motion-provider`, `onboarding-tour`, `pnl-badge`, `sentiment-meter`, `source-icon`, `sparkline`, `theme-provider`, `theme-toggle`, `ticker-card`, `ticker-chart`, `usage-meter`
 
 Items reference each other by absolute `https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/<name>.json` URLs, so a single `add` pulls
 its whole dependency chain. `utils` (`cn`) is assumed to exist from `shadcn init`.

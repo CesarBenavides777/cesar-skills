@@ -42,7 +42,7 @@
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-card.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/aria-dropdown-menu.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/pnl-badge.json",
-        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/ticker-chart.json"
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/sparkline.json"
       ],
       "categories": [
         "moneytrees"
@@ -55,7 +55,7 @@
           "aria-card",
           "aria-dropdown-menu",
           "pnl-badge",
-          "ticker-chart"
+          "sparkline"
         ]
       },
       "files": [
@@ -117,6 +117,37 @@
           "path": "packages/ui/src/components/ui/alert-dialog.tsx",
           "type": "registry:ui",
           "target": "@ui/alert-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "area-chart",
+      "type": "registry:component",
+      "title": "Area Chart",
+      "description": "Area Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "recharts@2.15.4"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-kit.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-kit"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/area-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/area-chart.tsx"
         }
       ]
     },
@@ -1154,6 +1185,37 @@
       ]
     },
     {
+      "name": "bar-chart",
+      "type": "registry:component",
+      "title": "Bar Chart",
+      "description": "Bar Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "recharts@2.15.4"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-kit.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-kit"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/bar-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/bar-chart.tsx"
+        }
+      ]
+    },
+    {
       "name": "bending-sidebar",
       "type": "registry:component",
       "title": "Bending Sidebar",
@@ -1237,6 +1299,66 @@
           "path": "packages/ui/src/components/ui/button-group.tsx",
           "type": "registry:ui",
           "target": "@ui/button-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calendar-heatmap",
+      "type": "registry:component",
+      "title": "Calendar Heatmap",
+      "description": "Calendar Heatmap — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-engine.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-engine"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/calendar-heatmap.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/calendar-heatmap.tsx"
+        }
+      ]
+    },
+    {
+      "name": "candlestick-chart",
+      "type": "registry:component",
+      "title": "Candlestick Chart",
+      "description": "Candlestick Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "motion@^12.43.0",
+        "recharts@2.15.4"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-kit.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-kit"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/candlestick-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/candlestick-chart.tsx"
         }
       ]
     },
@@ -1347,27 +1469,78 @@
       ]
     },
     {
-      "name": "chat-threads-panel",
+      "name": "chart-engine",
       "type": "registry:component",
-      "title": "Chat Threads Panel",
-      "description": "ChatThreadsPanel — the nested chat sidebar: a glass rail that slides open beside the transcript and keeps track of conversation threads.",
+      "title": "Chart Engine",
+      "description": "Chart Engine — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
       "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
-      "dependencies": [
-        "lucide-react@^0.460.0",
-        "motion@^12.43.0"
-      ],
       "categories": [
-        "moneytrees"
+        "moneytrees",
+        "charts"
       ],
       "meta": {
-        "family": "moneytrees",
-        "source": "packages/moneytrees-ui/src/components"
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts"
       },
       "files": [
         {
-          "path": "packages/moneytrees-ui/src/components/chat-threads-panel.tsx",
+          "path": "packages/moneytrees-ui/src/charts/chart-engine.tsx",
           "type": "registry:component",
-          "target": "@components/moneytrees/chat-threads-panel.tsx"
+          "target": "@components/moneytrees/charts/chart-engine.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart-kit",
+      "type": "registry:component",
+      "title": "Chart Kit",
+      "description": "Chart Kit — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "motion@^12.43.0",
+        "recharts@2.15.4"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts"
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/chart-kit.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/chart-kit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cohort-chart",
+      "type": "registry:component",
+      "title": "Cohort Chart",
+      "description": "Cohort Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-engine.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-engine"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/cohort-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/cohort-chart.tsx"
         }
       ]
     },
@@ -1428,6 +1601,37 @@
       ]
     },
     {
+      "name": "composed-chart",
+      "type": "registry:component",
+      "title": "Composed Chart",
+      "description": "Composed Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "recharts@2.15.4"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-kit.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-kit"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/composed-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/composed-chart.tsx"
+        }
+      ]
+    },
+    {
       "name": "data-table-v2",
       "type": "registry:component",
       "title": "Data Table V2",
@@ -1442,6 +1646,7 @@
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/button.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/input.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/slider.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/source-icon.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/table.json"
       ],
       "categories": [
@@ -1455,6 +1660,7 @@
           "button",
           "input",
           "slider",
+          "source-icon",
           "table"
         ]
       },
@@ -1493,6 +1699,34 @@
           "path": "packages/moneytrees-ui/src/components/data-table-v2/types.ts",
           "type": "registry:component",
           "target": "@components/moneytrees/data-table-v2/types.ts"
+        }
+      ]
+    },
+    {
+      "name": "depth-chart",
+      "type": "registry:component",
+      "title": "Depth Chart",
+      "description": "Depth Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-engine.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-engine"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/depth-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/depth-chart.tsx"
         }
       ]
     },
@@ -1622,6 +1856,34 @@
       ]
     },
     {
+      "name": "histogram-chart",
+      "type": "registry:component",
+      "title": "Histogram Chart",
+      "description": "Histogram Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-engine.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-engine"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/histogram-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/histogram-chart.tsx"
+        }
+      ]
+    },
+    {
       "name": "hover-card",
       "type": "registry:ui",
       "title": "Hover Card",
@@ -1642,6 +1904,34 @@
           "path": "packages/ui/src/components/ui/hover-card.tsx",
           "type": "registry:ui",
           "target": "@ui/hover-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "indicator-chart",
+      "type": "registry:component",
+      "title": "Indicator Chart",
+      "description": "Indicator Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-engine.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-engine"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/indicator-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/indicator-chart.tsx"
         }
       ]
     },
@@ -1729,6 +2019,37 @@
       ]
     },
     {
+      "name": "line-chart",
+      "type": "registry:component",
+      "title": "Line Chart",
+      "description": "Line Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "recharts@2.15.4"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-kit.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-kit"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/line-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/line-chart.tsx"
+        }
+      ]
+    },
+    {
       "name": "liquid-surface",
       "type": "registry:component",
       "title": "Liquid Surface",
@@ -1780,6 +2101,64 @@
           "path": "packages/moneytrees-ui/src/components/live-feed-table.tsx",
           "type": "registry:component",
           "target": "@components/moneytrees/live-feed-table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "market-chart",
+      "type": "registry:component",
+      "title": "Market Chart",
+      "description": "Market Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-engine.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/market-chart-parts.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-engine",
+          "market-chart-parts"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/market-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/market-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "market-chart-parts",
+      "type": "registry:component",
+      "title": "Market Chart Parts",
+      "description": "Market Chart Parts — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-engine.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-engine"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/market-chart-parts.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/market-chart-parts.tsx"
         }
       ]
     },
@@ -1943,7 +2322,23 @@
           "--chart-2": "var(--color-bear)",
           "--chart-3": "var(--color-gold)",
           "--chart-4": "var(--color-violet)",
-          "--chart-5": "var(--color-cyan)"
+          "--chart-5": "var(--color-cyan)",
+          "--spectrum-chart-1": "var(--color-gold)",
+          "--spectrum-chart-2": "var(--color-violet)",
+          "--spectrum-chart-3": "var(--color-cyan)",
+          "--spectrum-chart-4": "var(--color-bull)",
+          "--spectrum-chart-5": "var(--color-muted-foreground)",
+          "--spectrum-chart-surface": "var(--color-card)",
+          "--spectrum-chart-up": "var(--color-bull)",
+          "--spectrum-chart-down": "var(--color-bear)",
+          "--spectrum-series-1": "var(--color-gold)",
+          "--spectrum-series-2": "var(--color-violet)",
+          "--spectrum-series-3": "var(--color-cyan)",
+          "--spectrum-series-4": "var(--color-bull)",
+          "--spectrum-series-5": "var(--color-bear)",
+          "--spectrum-series-6": "var(--color-muted-foreground)",
+          "--spectrum-track": "var(--color-muted)",
+          "--spectrum-heat-flat": "var(--color-muted)"
         },
         "[data-theme=\"moneytrees\"].dark": {
           "--background": "hsl(220 7% 13%)",
@@ -2113,17 +2508,40 @@
       "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
       "registryDependencies": [
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/agent-card.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/area-chart.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/bar-chart.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/bending-sidebar.json",
-        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chat-threads-panel.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/calendar-heatmap.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/candlestick-chart.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-engine.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-kit.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/cohort-chart.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/composed-chart.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/data-table-v2.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/depth-chart.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/feature-art.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/histogram-chart.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/indicator-chart.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/line-chart.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/liquid-surface.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/live-feed-table.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/market-chart-parts.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/market-chart.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/moneytrees-logo.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/moneytrees-theme.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/motion-provider.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/onboarding-tour.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/order-book.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/pie-chart.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/pnl-badge.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/portfolio-chart.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/price-chart.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/radar-chart.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/radial-chart.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/sentiment-meter.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/source-icon.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/sparkline.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/stat-cards.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/theme-provider.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/theme-toggle.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/ticker-card.json",
@@ -2138,17 +2556,40 @@
         "family": "moneytrees",
         "registryDependencyNames": [
           "agent-card",
+          "area-chart",
+          "bar-chart",
           "bending-sidebar",
-          "chat-threads-panel",
+          "calendar-heatmap",
+          "candlestick-chart",
+          "chart-engine",
+          "chart-kit",
+          "cohort-chart",
+          "composed-chart",
           "data-table-v2",
+          "depth-chart",
           "feature-art",
+          "histogram-chart",
+          "indicator-chart",
+          "line-chart",
           "liquid-surface",
           "live-feed-table",
+          "market-chart",
+          "market-chart-parts",
           "moneytrees-logo",
           "moneytrees-theme",
+          "motion-provider",
           "onboarding-tour",
+          "order-book",
+          "pie-chart",
           "pnl-badge",
+          "portfolio-chart",
+          "price-chart",
+          "radar-chart",
+          "radial-chart",
           "sentiment-meter",
+          "source-icon",
+          "sparkline",
+          "stat-cards",
           "theme-provider",
           "theme-toggle",
           "ticker-card",
@@ -2156,6 +2597,30 @@
           "usage-meter"
         ]
       }
+    },
+    {
+      "name": "motion-provider",
+      "type": "registry:component",
+      "title": "Motion Provider",
+      "description": "Motion Provider — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "motion@^12.43.0"
+      ],
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components"
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/motion-provider.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/motion-provider.tsx"
+        }
+      ]
     },
     {
       "name": "onboarding-tour",
@@ -2178,6 +2643,34 @@
           "path": "packages/moneytrees-ui/src/components/onboarding-tour.tsx",
           "type": "registry:component",
           "target": "@components/moneytrees/onboarding-tour.tsx"
+        }
+      ]
+    },
+    {
+      "name": "order-book",
+      "type": "registry:component",
+      "title": "Order Book",
+      "description": "Order Book — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-engine.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-engine"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/order-book.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/order-book.tsx"
         }
       ]
     },
@@ -2211,6 +2704,37 @@
           "path": "plugins/paper-design/skills/paper-design/scripts/p.py",
           "type": "registry:file",
           "target": "~/.claude/skills/paper-design/scripts/p.py"
+        }
+      ]
+    },
+    {
+      "name": "pie-chart",
+      "type": "registry:component",
+      "title": "Pie Chart",
+      "description": "Pie Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "recharts@2.15.4"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-kit.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-kit"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/pie-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/pie-chart.tsx"
         }
       ]
     },
@@ -2263,6 +2787,66 @@
       ]
     },
     {
+      "name": "portfolio-chart",
+      "type": "registry:component",
+      "title": "Portfolio Chart",
+      "description": "Portfolio Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-engine.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-engine"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/portfolio-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/portfolio-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "price-chart",
+      "type": "registry:component",
+      "title": "Price Chart",
+      "description": "Price Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "motion@^12.43.0",
+        "recharts@2.15.4"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-kit.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-kit"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/price-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/price-chart.tsx"
+        }
+      ]
+    },
+    {
       "name": "progress",
       "type": "registry:ui",
       "title": "Progress",
@@ -2283,6 +2867,68 @@
           "path": "packages/ui/src/components/ui/progress.tsx",
           "type": "registry:ui",
           "target": "@ui/progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radar-chart",
+      "type": "registry:component",
+      "title": "Radar Chart",
+      "description": "Radar Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "recharts@2.15.4"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-kit.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-kit"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/radar-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/radar-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radial-chart",
+      "type": "registry:component",
+      "title": "Radial Chart",
+      "description": "Radial Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "recharts@2.15.4"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-kit.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-kit"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/radial-chart.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/radial-chart.tsx"
         }
       ]
     },
@@ -2362,15 +3008,20 @@
       "title": "Sentiment Meter",
       "description": "Sentiment Meter — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
       "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
-      "dependencies": [
-        "motion@^12.43.0"
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-engine.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/radial-chart.json"
       ],
       "categories": [
         "moneytrees"
       ],
       "meta": {
         "family": "moneytrees",
-        "source": "packages/moneytrees-ui/src/components"
+        "source": "packages/moneytrees-ui/src/components",
+        "registryDependencyNames": [
+          "chart-engine",
+          "radial-chart"
+        ]
       },
       "files": [
         {
@@ -2475,6 +3126,34 @@
       ]
     },
     {
+      "name": "simple-html-recap",
+      "type": "registry:item",
+      "title": "simple-html-recap",
+      "description": "A \"super simple\" single-file HTML format for recaps, summaries, and shipped-work lists, with tone, writing conventions and theme adjustable per user or project through a recap-style.md file. Use when asked for a recap, summary, changelog or shipped list \"in html\", or when delivering weekly-recap output as HTML instead of markdown or chat.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "categories": [
+        "agent-skill"
+      ],
+      "docs": "Installed to .claude/skills/simple-html-recap/ (project-scoped). For a user-global copy run: npx skills add CesarBenavides777/cesar-skills --skill simple-html-recap -g",
+      "meta": {
+        "family": "skill",
+        "source": "plugins/simple-html-recap/skills/simple-html-recap",
+        "skill": true
+      },
+      "files": [
+        {
+          "path": "plugins/simple-html-recap/skills/simple-html-recap/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/simple-html-recap/SKILL.md"
+        },
+        {
+          "path": "plugins/simple-html-recap/skills/simple-html-recap/style-template.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/simple-html-recap/style-template.md"
+        }
+      ]
+    },
+    {
       "name": "skeleton",
       "type": "registry:ui",
       "title": "Skeleton",
@@ -2546,6 +3225,57 @@
       ]
     },
     {
+      "name": "source-icon",
+      "type": "registry:component",
+      "title": "Source Icon",
+      "description": "Source Icon — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "dependencies": [
+        "lucide-react@^0.460.0"
+      ],
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components"
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/source-icon.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/source-icon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sparkline",
+      "type": "registry:component",
+      "title": "Sparkline",
+      "description": "Sparkline — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-engine.json"
+      ],
+      "categories": [
+        "moneytrees"
+      ],
+      "meta": {
+        "family": "moneytrees",
+        "source": "packages/moneytrees-ui/src/components",
+        "registryDependencyNames": [
+          "chart-engine"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/components/sparkline.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/sparkline.tsx"
+        }
+      ]
+    },
+    {
       "name": "spinner",
       "type": "registry:ui",
       "title": "Spinner",
@@ -2566,6 +3296,34 @@
           "path": "packages/ui/src/components/ui/spinner.tsx",
           "type": "registry:ui",
           "target": "@ui/spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-cards",
+      "type": "registry:component",
+      "title": "Stat Cards",
+      "description": "Stat Cards — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+      "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-engine.json"
+      ],
+      "categories": [
+        "moneytrees",
+        "charts"
+      ],
+      "meta": {
+        "family": "moneytrees-charts",
+        "source": "packages/moneytrees-ui/src/charts",
+        "registryDependencyNames": [
+          "chart-engine"
+        ]
+      },
+      "files": [
+        {
+          "path": "packages/moneytrees-ui/src/charts/stat-cards.tsx",
+          "type": "registry:component",
+          "target": "@components/moneytrees/charts/stat-cards.tsx"
         }
       ]
     },
@@ -2928,7 +3686,7 @@
       "registryDependencies": [
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/liquid-surface.json",
         "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/pnl-badge.json",
-        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/ticker-chart.json"
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/sparkline.json"
       ],
       "categories": [
         "moneytrees"
@@ -2939,7 +3697,7 @@
         "registryDependencyNames": [
           "liquid-surface",
           "pnl-badge",
-          "ticker-chart"
+          "sparkline"
         ]
       },
       "files": [
@@ -2956,15 +3714,22 @@
       "title": "Ticker Chart",
       "description": "Ticker Chart — moneytrees domain component (liquid-glass finance UI) from @workspace/moneytrees-ui.",
       "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
-      "dependencies": [
-        "recharts@2.15.4"
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-engine.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/price-chart.json",
+        "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/sparkline.json"
       ],
       "categories": [
         "moneytrees"
       ],
       "meta": {
         "family": "moneytrees",
-        "source": "packages/moneytrees-ui/src/components"
+        "source": "packages/moneytrees-ui/src/components",
+        "registryDependencyNames": [
+          "chart-engine",
+          "price-chart",
+          "sparkline"
+        ]
       },
       "files": [
         {

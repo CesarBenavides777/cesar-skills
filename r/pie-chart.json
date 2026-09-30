@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pie-chart",
+  "type": "registry:component",
+  "title": "Pie Chart",
+  "description": "Pie Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "recharts@2.15.4"
+  ],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-kit.json"
+  ],
+  "files": [
+    {
+      "path": "packages/moneytrees-ui/src/charts/pie-chart.tsx",
+      "type": "registry:component",
+      "target": "@components/moneytrees/charts/pie-chart.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Cell, Pie, PieChart as RechartsPieChart, ResponsiveContainer, Tooltip } from \"recharts\";\nimport { cn } from \"@/lib/utils\";\nimport {\n  CHART_COLORS,\n  ChartFrame,\n  ChartGlowFilter,\n  ChartLegend,\n  ChartLoadingBars,\n  ChartPlotSurface,\n  ChartTooltipContent,\n  HOVER_TRANSITION,\n  markOpacity,\n  useChartId,\n  useChartMotion,\n} from \"@/components/moneytrees/charts/chart-kit\";\n\nexport type PieSlice = { name: string; value: number; color?: string };\n\nexport interface SpectrumPieChartProps {\n  className?: string;\n  data: PieSlice[];\n  variant?: \"pie\" | \"donut\";\n  innerRadius?: number | string;\n  paddingAngle?: number;\n  cornerRadius?: number;\n  showLabels?: boolean;\n  glowing?: boolean;\n  isLoading?: boolean;\n  showLegend?: boolean;\n  height?: number;\n  formatValue?: (value: number) => string;\n  /** Donut centre content. */\n  center?: React.ReactNode;\n}\n\nexport function PieChart({\n  className,\n  data,\n  variant = \"pie\",\n  innerRadius,\n  paddingAngle = 2,\n  cornerRadius = 6,\n  showLabels = false,\n  glowing = false,\n  isLoading = false,\n  showLegend = true,\n  height,\n  formatValue,\n  center,\n}: SpectrumPieChartProps) {\n  const id = useChartId(\"pie\");\n  const { isAnimationActive, animationDuration } = useChartMotion();\n  const [activeName, setActiveName] = React.useState<string | null>(null);\n  const glowId = `${id}-glow`;\n  const inner = innerRadius ?? (variant === \"donut\" ? \"55%\" : 0);\n  const rows = data.map((item, index) => ({\n    ...item,\n    fill: item.color ?? CHART_COLORS[index % CHART_COLORS.length]!,\n  }));\n\n  return (\n    <ChartFrame className={cn(\"flex flex-col\", className)} height={height}>\n      {showLegend ? (\n        <ChartLegend items={rows.map((item) => ({ label: item.name, color: item.fill }))} />\n      ) : null}\n      {isLoading ? (\n        <ChartLoadingBars count={6} />\n      ) : (\n        <ChartPlotSurface>\n          <ResponsiveContainer width=\"100%\" height=\"100%\">\n            <RechartsPieChart>\n              <defs>{glowing ? <ChartGlowFilter id={glowId} /> : null}</defs>\n              <Tooltip content={<ChartTooltipContent formatValue={formatValue} />} />\n              <Pie\n                data={rows}\n                dataKey=\"value\"\n                nameKey=\"name\"\n                innerRadius={inner}\n                outerRadius={showLabels ? \"64%\" : \"78%\"}\n                paddingAngle={paddingAngle}\n                cornerRadius={cornerRadius}\n                isAnimationActive={isAnimationActive}\n                animationDuration={animationDuration}\n                animationEasing=\"ease-out\"\n                label={\n                  showLabels\n                    ? ({ name, percent }) => `${name} ${Math.round((percent ?? 0) * 100)}%`\n                    : false\n                }\n                labelLine={showLabels}\n                filter={glowing ? `url(#${glowId})` : undefined}\n                onMouseLeave={() => setActiveName(null)}\n              >\n                {rows.map((item) => (\n                  <Cell\n                    key={item.name}\n                    fill={item.fill}\n                    stroke=\"var(--spectrum-chart-surface)\"\n                    strokeWidth={1.5}\n                    style={{\n                      opacity: markOpacity(activeName, item.name),\n                      transition: HOVER_TRANSITION,\n                      cursor: \"pointer\",\n                    }}\n                    onMouseEnter={() => setActiveName(item.name)}\n                  />\n                ))}\n              </Pie>\n            </RechartsPieChart>\n          </ResponsiveContainer>\n          {center && variant === \"donut\" ? (\n            <div className=\"pointer-events-none absolute inset-0 flex items-center justify-center\">\n              {center}\n            </div>\n          ) : null}\n        </ChartPlotSurface>\n      )}\n    </ChartFrame>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "moneytrees",
+    "charts"
+  ],
+  "meta": {
+    "family": "moneytrees-charts",
+    "source": "packages/moneytrees-ui/src/charts",
+    "registryDependencyNames": [
+      "chart-kit"
+    ]
+  }
+}

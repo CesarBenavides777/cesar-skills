@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radial-chart",
+  "type": "registry:component",
+  "title": "Radial Chart",
+  "description": "Radial Chart — moneytrees chart (Recharts) from @workspace/moneytrees-ui.",
+  "author": "Cesar Benavides <https://github.com/CesarBenavides777>",
+  "dependencies": [
+    "recharts@2.15.4"
+  ],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/CesarBenavides777/cesar-skills/main/r/chart-kit.json"
+  ],
+  "files": [
+    {
+      "path": "packages/moneytrees-ui/src/charts/radial-chart.tsx",
+      "type": "registry:component",
+      "target": "@components/moneytrees/charts/radial-chart.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport {\n  Cell,\n  PolarGrid,\n  RadialBar,\n  RadialBarChart as RechartsRadialBarChart,\n  ResponsiveContainer,\n  Tooltip,\n} from \"recharts\";\nimport { cn } from \"@/lib/utils\";\nimport {\n  CHART_COLORS,\n  ChartFrame,\n  ChartGlowFilter,\n  ChartLegend,\n  ChartLoadingBars,\n  ChartPlotSurface,\n  ChartTooltipContent,\n  HOVER_TRANSITION,\n  markOpacity,\n  useChartId,\n  useChartMotion,\n} from \"@/components/moneytrees/charts/chart-kit\";\n\nexport type RadialVariant = \"full\" | \"semi\";\nexport type RadialSlice = { name: string; value: number; color?: string };\n\nexport interface SpectrumRadialChartProps {\n  className?: string;\n  data: RadialSlice[];\n  variant?: RadialVariant;\n  /** Fixes the scale so a single value reads as progress out of `max`. */\n  max?: number;\n  glowing?: boolean;\n  isLoading?: boolean;\n  showLegend?: boolean;\n  height?: number;\n  formatValue?: (value: number) => string;\n  center?: React.ReactNode;\n}\n\ntype RadialRow = RadialSlice & { fill: string };\n\nfunction resolveRadialRows(data: RadialSlice[]): RadialRow[] {\n  return data.map((item, index) => ({\n    ...item,\n    fill: item.color ?? CHART_COLORS[index % CHART_COLORS.length]!,\n  }));\n}\n\nfunction resolveRadialDomain(max: number | undefined): [number, number] | undefined {\n  return max !== undefined ? [0, max] : undefined;\n}\n\nfunction radialGeometry(semi: boolean, count: number) {\n  return {\n    innerRadius: count === 1 ? \"70%\" : \"18%\",\n    startAngle: semi ? 180 : 90,\n    endAngle: semi ? 0 : -270,\n    cy: semi ? \"64%\" : \"50%\",\n  };\n}\n\nfunction RadialCenter({ center, semi }: { center: React.ReactNode; semi: boolean }) {\n  if (!center) return null;\n  return (\n    <div\n      className={cn(\n        \"pointer-events-none absolute inset-0 flex items-center justify-center\",\n        semi && \"items-end pb-[18%]\",\n      )}\n    >\n      {center}\n    </div>\n  );\n}\n\nfunction RadialPlot({\n  rows,\n  semi,\n  glowing,\n  glowId,\n  domain,\n  formatValue,\n  center,\n  activeName,\n  setActiveName,\n}: {\n  rows: RadialRow[];\n  semi: boolean;\n  glowing: boolean;\n  glowId: string;\n  domain: [number, number] | undefined;\n  formatValue: ((value: number) => string) | undefined;\n  center: React.ReactNode;\n  activeName: string | null;\n  setActiveName: React.Dispatch<React.SetStateAction<string | null>>;\n}) {\n  const { isAnimationActive, animationDuration } = useChartMotion();\n  const { innerRadius, startAngle, endAngle, cy } = radialGeometry(semi, rows.length);\n\n  return (\n    <ChartPlotSurface>\n      <ResponsiveContainer width=\"100%\" height=\"100%\">\n        <RechartsRadialBarChart\n          data={rows}\n          innerRadius={innerRadius}\n          outerRadius=\"88%\"\n          startAngle={startAngle}\n          endAngle={endAngle}\n          cy={cy}\n          onMouseLeave={() => setActiveName(null)}\n        >\n          <defs>{glowing ? <ChartGlowFilter id={glowId} /> : null}</defs>\n          {rows.length > 1 ? (\n            <PolarGrid\n              gridType=\"circle\"\n              radialLines={false}\n              stroke=\"currentColor\"\n              strokeOpacity={0.14}\n            />\n          ) : null}\n          <Tooltip content={<ChartTooltipContent formatValue={formatValue} />} />\n          <RadialBar\n            dataKey=\"value\"\n            background={{ fill: \"currentColor\", fillOpacity: 0.07 }}\n            cornerRadius={6}\n            isAnimationActive={isAnimationActive}\n            animationDuration={animationDuration}\n            animationEasing=\"ease-out\"\n            filter={glowing ? `url(#${glowId})` : undefined}\n            {...(domain ? { domain } : {})}\n          >\n            {rows.map((item) => (\n              <Cell\n                key={item.name}\n                fill={item.fill}\n                stroke=\"var(--spectrum-chart-surface)\"\n                strokeWidth={1}\n                style={{\n                  opacity: markOpacity(activeName, item.name),\n                  transition: HOVER_TRANSITION,\n                  cursor: \"pointer\",\n                }}\n                onMouseEnter={() => setActiveName(item.name)}\n              />\n            ))}\n          </RadialBar>\n        </RechartsRadialBarChart>\n      </ResponsiveContainer>\n      <RadialCenter center={center} semi={semi} />\n    </ChartPlotSurface>\n  );\n}\n\nexport function RadialChart({\n  className,\n  data,\n  variant = \"full\",\n  max,\n  glowing = false,\n  isLoading = false,\n  showLegend = true,\n  height,\n  formatValue,\n  center,\n}: SpectrumRadialChartProps) {\n  const id = useChartId(\"radial\");\n  const [activeName, setActiveName] = React.useState<string | null>(null);\n  const glowId = `${id}-glow`;\n  const semi = variant === \"semi\";\n  const rows = resolveRadialRows(data);\n  const domain = resolveRadialDomain(max);\n\n  return (\n    <ChartFrame className={cn(\"flex flex-col\", className)} height={height}>\n      {showLegend && rows.length > 1 ? (\n        <ChartLegend items={rows.map((item) => ({ label: item.name, color: item.fill }))} />\n      ) : null}\n      {isLoading ? (\n        <ChartLoadingBars count={6} />\n      ) : (\n        <RadialPlot\n          rows={rows}\n          semi={semi}\n          glowing={glowing}\n          glowId={glowId}\n          domain={domain}\n          formatValue={formatValue}\n          center={center}\n          activeName={activeName}\n          setActiveName={setActiveName}\n        />\n      )}\n    </ChartFrame>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "moneytrees",
+    "charts"
+  ],
+  "meta": {
+    "family": "moneytrees-charts",
+    "source": "packages/moneytrees-ui/src/charts",
+    "registryDependencyNames": [
+      "chart-kit"
+    ]
+  }
+}
