@@ -86,6 +86,7 @@ li {
   text-decoration: underline;
 }
 .ic {
+  fill: currentColor;
   width: 11px;
   height: 11px;
   vertical-align: -1px;
@@ -132,7 +133,7 @@ brand.
 
 Unless a `Links` section says otherwise:
 
-- GitHub base URL: `git remote get-url origin`.
+- GitHub base URL: `gh repo view --json url --jq .url`.
 - PRs and commits: `gh pr list --state merged --search "merged:>=YYYY-MM-DD"`, `git log --since`.
 - Before linking a page on a live site, confirm the route exists in the app.
 - Leave a link out rather than guess one.

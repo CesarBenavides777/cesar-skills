@@ -70,6 +70,7 @@ li {
   text-decoration: underline;
 }
 .ic {
+  fill: currentColor;
   width: 11px;
   height: 11px;
   vertical-align: -1px;
